@@ -9,14 +9,14 @@
   <title>es6面向对象回顾 | 林伟杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="class关键字class关键字可以声明一个对象，比如定义一个车对象： 123class Car &amp;#123;  &#x2F;&#x2F;...&amp;#125;  constructor函数constructor函数，在对象执行new操作符的时候回被执行，可以接受执行new操作的时候传入对象的参数 12345678class Car&amp;#123;  constructor(x)&amp;#123;    &#x2F;&#x2F;Car被new的时候，">
-<meta name="keywords" content="es6">
+<meta name="keywords" content="随笔,es6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6面向对象回顾">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019-12-06-es6%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9B%9E%E9%A1%BE&#x2F;index.html">
 <meta property="og:site_name" content="林伟杰的博客">
 <meta property="og:description" content="class关键字class关键字可以声明一个对象，比如定义一个车对象： 123class Car &amp;#123;  &#x2F;&#x2F;...&amp;#125;  constructor函数constructor函数，在对象执行new操作符的时候回被执行，可以接受执行new操作的时候传入对象的参数 12345678class Car&amp;#123;  constructor(x)&amp;#123;    &#x2F;&#x2F;Car被new的时候，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-06T04:56:47.510Z">
+<meta property="og:updated_time" content="2019-12-18T01:54:32.891Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="林伟杰的博客" type="application/atom+xml">
@@ -165,6 +165,8 @@
 
 <h2 id="constructor函数"><a href="#constructor函数" class="headerlink" title="constructor函数"></a>constructor函数</h2><p>constructor函数，在对象执行new操作符的时候回被执行，可以接受执行new操作的时候传入对象的参数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Car&#123;</span><br><span class="line">  constructor(x)&#123;</span><br><span class="line">    //Car被new的时候，我就会执行</span><br><span class="line">    console.log(x)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">new Car(&apos;我是从外面传进来的&apos;) // -&gt; 我是从外面传进来的</span><br></pre></td></tr></table></figure>
+
+<h2 id="类继承extends和super关键字"><a href="#类继承extends和super关键字" class="headerlink" title="类继承extends和super关键字"></a>类继承extends和super关键字</h2>
       
 
       
@@ -177,7 +179,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">es6</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">随笔,es6</a>
         		</li>
       		
 		</ul>
@@ -247,6 +249,15 @@
   
 <nav id="article-nav">
   
+    <a href="/blog/2019-12-10-git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          git常用命令
+        
+      </div>
+    </a>
+  
   
     <a href="/blog/2019-12-04-vuex%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">vuex的简单理解</div>
@@ -276,7 +287,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#class关键字"><span class="toc-number">1.</span> <span class="toc-text">class关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#constructor函数"><span class="toc-number">2.</span> <span class="toc-text">constructor函数</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#class关键字"><span class="toc-number">1.</span> <span class="toc-text">class关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#constructor函数"><span class="toc-number">2.</span> <span class="toc-text">constructor函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类继承extends和super关键字"><span class="toc-number">3.</span> <span class="toc-text">类继承extends和super关键字</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -388,11 +399,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">es6</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">随笔,vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">随笔,es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">随笔,git</a>
               </li>
             
             <div class="clearfix"></div>

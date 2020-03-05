@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>vue组件间通信的方法总结 | 林伟杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现 父组件向子组件传数据  父组件用 v-bind:data 来向子组件传入数据  例如: &amp;lt;childCom :childDefProp=&amp;#39;data&amp;#39; &#x2F;&amp;gt; 子组件内需要定义响应的 prop 形参来接收 例如： props: [&amp;#39;childDefProp&amp;#39;]">
+  <meta name="description" content="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现 父组件向子组件传数据  父组件用 v-bind:data 来向子组件传入数据  例如: &amp;lt;child-com :childDefProp=&amp;#39;data&amp;#39; &#x2F;&amp;gt; 子组件内需要定义响应的 prop 形参来接收 例如： props: [&amp;#39;childDefProp&amp;#39;]">
 <meta name="keywords" content="随笔,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue组件间通信的方法总结">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93&#x2F;index.html">
 <meta property="og:site_name" content="林伟杰的博客">
-<meta property="og:description" content="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现 父组件向子组件传数据  父组件用 v-bind:data 来向子组件传入数据  例如: &amp;lt;childCom :childDefProp=&amp;#39;data&amp;#39; &#x2F;&amp;gt; 子组件内需要定义响应的 prop 形参来接收 例如： props: [&amp;#39;childDefProp&amp;#39;]">
+<meta property="og:description" content="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现 父组件向子组件传数据  父组件用 v-bind:data 来向子组件传入数据  例如: &amp;lt;child-com :childDefProp=&amp;#39;data&amp;#39; &#x2F;&amp;gt; 子组件内需要定义响应的 prop 形参来接收 例如： props: [&amp;#39;childDefProp&amp;#39;]">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-05T03:38:11.124Z">
+<meta property="og:updated_time" content="2020-03-05T06:00:28.670Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="林伟杰的博客" type="application/atom+xml">
@@ -163,13 +163,13 @@
         <h2 id="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"><a href="#各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现" class="headerlink" title="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"></a>各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现</h2><ul>
 <li><p>父组件向子组件传数据</p>
 <ol>
-<li>父组件用 <code>v-bind:data</code> 来向子组件传入数据  例如: <code>&lt;childCom :childDefProp=&#39;data&#39; /&gt;</code></li>
+<li>父组件用 <code>v-bind:data</code> 来向子组件传入数据  例如: <code>&lt;child-com :childDefProp=&#39;data&#39; /&gt;</code></li>
 <li>子组件内需要定义响应的 prop 形参来接收 例如： <code>props: [&#39;childDefProp&#39;]</code> </li>
 </ol>
 </li>
 <li><p>子组件调用父组件中的方法，利用 <code>$emit()</code> 方法实现</p>
 <ol>
-<li>父组件需要将定义的方法用 <code>v-on:(自定义事件名称)</code> 传递给子组件 例如： <code>&lt;childCom @defEvent=&#39;fatherMethod&#39; /&gt;</code></li>
+<li>父组件需要将定义的方法用 <code>v-on:(自定义事件名称)</code> 传递给子组件 例如： <code>&lt;child-com @defEvent=&#39;fatherMethod&#39; /&gt;</code></li>
 <li>子组件内使用 <code>this.$emit(&#39;defEvent&#39;)</code> 触发事件</li>
 </ol>
 </li>
@@ -181,7 +181,12 @@
 <li><p>父组件调用子组件中的方法直接可以用 ref 属性找到子组件 直接用 . 查找触发</p>
 </li>
 </ul>
-<h2 id="关于-sync修饰符可以实现父子组件双向绑定数据"><a href="#关于-sync修饰符可以实现父子组件双向绑定数据" class="headerlink" title="关于 .sync修饰符可以实现父子组件双向绑定数据"></a>关于 .sync修饰符可以实现父子组件双向绑定数据</h2>
+<h2 id="关于-sync修饰符可以实现父子组件双向绑定数据"><a href="#关于-sync修饰符可以实现父子组件双向绑定数据" class="headerlink" title="关于 .sync修饰符可以实现父子组件双向绑定数据"></a>关于 .sync修饰符可以实现父子组件双向绑定数据</h2><ul>
+<li><p>.sync是一个编译时的语法糖，他会被自动扩展为一个自动更新父组件属性的v-on监听器</p>
+<p>例如： <code>&lt;child-com :foo.sync=&quot;bar&quot; /&gt;</code> 会扩展为 <code>&lt;child-com :foo=&quot;bar&quot; @update:foo=&quot;val =&gt; foo = val&quot; /&gt;</code><br>此时 child-com 组件内部显示的触发 <code>this.$emit(&#39;update:foo&#39;,newVal)</code> 就可以将 newVal 更新到父组件中的 foo 变量中</p>
+</li>
+</ul>
+
       
 
       
@@ -409,27 +414,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">nodejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">es6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -438,6 +427,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">es6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">nodejs</a>
               </li>
             
             <div class="clearfix"></div>

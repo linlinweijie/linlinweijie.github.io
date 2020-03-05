@@ -138,6 +138,395 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue组件间通信的方法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">vue组件间通信的方法总结</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-03-05T03:20:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"><a href="#各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现" class="headerlink" title="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"></a>各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现</h2><ul>
+<li><p>父组件向子组件传数据</p>
+<ol>
+<li>父组件用 <code>v-bind:data</code> 来向子组件传入数据  例如: <code>&lt;childCom :childDefProp=&#39;data&#39; /&gt;</code></li>
+<li>子组件内需要定义响应的 prop 形参来接收 例如： <code>props: [&#39;childDefProp&#39;]</code> </li>
+</ol>
+</li>
+<li><p>子组件调用父组件中的方法，利用 <code>$emit()</code> 方法实现</p>
+<ol>
+<li>父组件需要将定义的方法用 <code>v-on:(自定义事件名称)</code> 传递给子组件 例如： <code>&lt;childCom @defEvent=&#39;fatherMethod&#39; /&gt;</code></li>
+<li>子组件内使用 <code>this.$emit(&#39;defEvent&#39;)</code> 触发事件</li>
+</ol>
+</li>
+<li><p>子组件传递数据给父组件，利用 <code>$emit()</code> 的第二个参数来传递</p>
+<ol>
+<li>利用子组件调用父组件的方法将所需要传递的数据填入 <code>$emit(&#39;defEvent&#39;,data)</code> data中，父组件中的方法定义一个形参来接收data</li>
+</ol>
+</li>
+<li><p>父组件调用子组件中的方法直接可以用 ref 属性找到子组件 直接用 . 查找触发</p>
+</li>
+</ul>
+<h2 id="关于-sync修饰符可以实现父子组件双向绑定数据"><a href="#关于-sync修饰符可以实现父子组件双向绑定数据" class="headerlink" title="关于 .sync修饰符可以实现父子组件双向绑定数据"></a>关于 .sync修饰符可以实现父子组件双向绑定数据</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-资源整合" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020-01-16-%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/">资源整合</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2020-01-16-%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/" class="archive-article-date">
+  	<time datetime="2020-01-16T09:38:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前端资源"><a href="#前端资源" class="headerlink" title="前端资源"></a>前端资源</h2><p><a href="https://www.cnblogs.com/chenyablog/p/5551143.html#4376045" target="_blank" rel="noopener">陈亚博客资源整合 传送门</a></p>
+<p><a href="https://www.cnblogs.com/chenyablog/p/6477866.html" target="_blank" rel="noopener">javaScript遍历对象、数组总结</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">资源</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020-01-16-%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-nodejs基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2019-12-31-nodejs%E5%9F%BA%E7%A1%80/">nodejs基础</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2019-12-31-nodejs%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2019-12-31T02:38:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h2><ul>
+<li><p>nodejs是一个javaScript运行时环境</p>
+</li>
+<li><p>nodejs的特性</p>
+</li>
+</ul>
+<ol>
+<li>事件驱动</li>
+<li>非阻塞IO模型（异步）</li>
+<li>轻量和高效</li>
+</ol>
+<ul>
+<li>使用nodemon来帮我们解决频繁修改代码重启服务器的问题</li>
+</ul>
+<ol>
+<li><code>npm install --global nodemon</code></li>
+<li><code>nodemon app.js</code></li>
+<li>验证是否安装成功 <code>nodemon --version</code></li>
+</ol>
+<ul>
+<li><p>B/S编程模型</p>
+</li>
+<li><p>学习资源<br><img src="../images/1578394348.jpg" alt="学习资源"></p>
+</li>
+</ul>
+<p><a href="https://tool.oschina.net/commons" target="_blank" rel="noopener">HTTP Mime-type 对照表</a></p>
+<ul>
+<li><p>ip地址用来定位计算机，端口号用来定位具体的应用程序（需要联网通信的软件都必须具有端口号）</p>
+</li>
+<li><p>模块系统</p>
+</li>
+</ul>
+<ol>
+<li>在node中没有全局作用域的概念</li>
+<li>在node中，智能通过require方法来加载执行多个javascript脚本文件</li>
+<li>require加载只能是执行其中的代码，文件与文件之间由于是模块作用域，所以不会有污染的问题<ul>
+<li>模块完全是封闭的</li>
+<li>外部无法访问内部</li>
+<li>内部也无法访问外部</li>
+</ul>
+</li>
+<li>模块作用域虽然可以避免变量命名的冲突污染问题，但是模块之间还是需要通信的，可以用<code>exports</code>来导出模块里需要输出的数据，再利用<code>require</code>来接收获取</li>
+</ol>
+<p>注： module.exports才是真正的接口，exports只不过是它的一个辅助工具，　最终返回给调用的是module.exports而不是exports。module.exports 初始值为一个空对象 {},而<strong>exports为指向module.exports 的引用</strong></p>
+<h2 id="ES6模块规范"><a href="#ES6模块规范" class="headerlink" title="ES6模块规范"></a>ES6模块规范</h2><p>不同于CommonJS，ES6使用 export 和 import 来导出、导入模块。</p>
+<p>export跟export default 有什么区别呢？</p>
+<p>1、export与export default均可用于导出常量、函数、文件、模块等</p>
+<p>2、你可以在其它文件或模块中通过import+(常量 | 函数 | 文件 | 模块)名的方式，将其导入，以便能够对其进行使用</p>
+<p>3、在一个文件或模块中，export可以有多个，export default仅有一个</p>
+<p>4、通过export方式导出，在导入时要加{ }，export default则不需要</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2019-12-31-nodejs%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-功能函数封装库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2019-12-26-%E5%8A%9F%E8%83%BD%E5%87%BD%E6%95%B0%E5%B0%81%E8%A3%85%E5%BA%93/">功能函数封装库</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2019-12-26-%E5%8A%9F%E8%83%BD%E5%87%BD%E6%95%B0%E5%B0%81%E8%A3%85%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2019-12-26T02:23:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="实用功能函数封装记录"><a href="#实用功能函数封装记录" class="headerlink" title="实用功能函数封装记录"></a>实用功能函数封装记录</h1><h2 id="对于复杂数据类型的拷贝"><a href="#对于复杂数据类型的拷贝" class="headerlink" title="对于复杂数据类型的拷贝"></a>对于复杂数据类型的拷贝</h2><ul>
+<li>浅拷贝方法</li>
+</ul>
+<p>Object.assign(target,…sources) es6新增可以实现浅拷贝的方法</p>
+<ul>
+<li>深拷贝方法</li>
+</ul>
+<p><code>let newData = JSON.parse(JSON.stringify(oldData))</code><br>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy(newObj,oldObj)&#123;</span><br><span class="line">  for(var k in oldObj)&#123;</span><br><span class="line">    var item = oldObj[k];</span><br><span class="line">    if(item instanceof Array)&#123;</span><br><span class="line">      newObj[k] = [];</span><br><span class="line">      deepCopy(newObj[k],item)</span><br><span class="line">    &#125;else if(item instanceof Object)&#123;</span><br><span class="line">      newObj[k] = &#123;&#125;;</span><br><span class="line">      deepCopy(newObj[k],item)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      newObj[k] = item;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">工具库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2019-12-26-%E5%8A%9F%E8%83%BD%E5%87%BD%E6%95%B0%E5%B0%81%E8%A3%85%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-git常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -247,7 +636,188 @@
 <h2 id="constructor函数"><a href="#constructor函数" class="headerlink" title="constructor函数"></a>constructor函数</h2><p>constructor函数，在对象执行new操作符的时候回被执行，可以接受执行new操作的时候传入对象的参数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Car&#123;</span><br><span class="line">  constructor(x)&#123;</span><br><span class="line">    //Car被new的时候，我就会执行</span><br><span class="line">    console.log(x)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">new Car(&apos;我是从外面传进来的&apos;) // -&gt; 我是从外面传进来的</span><br></pre></td></tr></table></figure>
 
-<h2 id="类继承extends和super关键字"><a href="#类继承extends和super关键字" class="headerlink" title="类继承extends和super关键字"></a>类继承extends和super关键字</h2>
+<h2 id="类继承extends和super关键字"><a href="#类继承extends和super关键字" class="headerlink" title="类继承extends和super关键字"></a>类继承extends和super关键字</h2><ul>
+<li><p>Son继承了Father的money方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Father&#123;</span><br><span class="line">  constructor()&#123;&#125;</span><br><span class="line">  money()&#123;</span><br><span class="line">    console.log(&apos;100块&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son extends Father&#123;</span><br><span class="line">  constructor()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子类向父类传递参数 super</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Father&#123;</span><br><span class="line">  constructor(x,y)&#123;</span><br><span class="line">    this.x = x;</span><br><span class="line">    this.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">  add()&#123;</span><br><span class="line">    console.log(this.x + this.y)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son extends Father&#123;</span><br><span class="line">  constructor(x,y)&#123;</span><br><span class="line">    super(x,y); // super必须放在constructor的最前面</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">new Son(1,2).add() // -&gt; 3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>super也可以调用父类中的普通函数 super.FatherMethodName()</p>
+</li>
+<li><p>es6 类是不会变量提升的，必须先定义后使用</p>
+</li>
+<li><p>this的指向问题，方法里的this总是指向这个方法的调用者</p>
+</li>
+<li><p>insertAdjacentHTML(position,html)方法的使用 第一个参数是插入的位置，第二个是插入的HTML字符串</p>
+<ul>
+<li>‘beforebegin’ 元素自身的前面</li>
+<li>‘afterbegin’ 插入元素内部的第一个子节点之前</li>
+<li>‘beforeend’ 插入元素内部的最后一个子节点之后</li>
+<li>‘afterend’ 元素自身的后面</li>
+<li>appendChild不支持追加字符串的子元素，insertAdjacentHTML支持追加字符串的元素</li>
+</ul>
+</li>
+<li><p>实例成员和静态成员的区别</p>
+<ul>
+<li>实例成员就是构造函数内部通过this添加的成员，只能通过实例来访问</li>
+<li>静态成员是直接添加在构造函数本身的成员，只能通过构造函数本身访问</li>
+</ul>
+</li>
+</ul>
+<h2 id="ES5-存在的问题"><a href="#ES5-存在的问题" class="headerlink" title="ES5 存在的问题"></a>ES5 存在的问题</h2><ul>
+<li><p>构造函数的问题，会存在浪费内存的问题<br><img src="../images/1577088520.jpg" alt="说明图"></p>
+</li>
+<li><p>每个函数都有一个prototype原型对象，可以把构造函数的公共方法放到prototype原型对象上，这样所有的实例都能共享到这个方法，也不存在内存浪费的问题</p>
+</li>
+<li><p>一般情况，吧公共属性定义到构造函数里面，公共方法放到原型对象身上</p>
+</li>
+<li><p>构造函数，实例，原型对象三者之间的关系<br><img src="../images/1577090267.jpg" alt="关系图"></p>
+</li>
+<li><p>原型链的关系实现继承<br><img src="../images/1577091097.jpg" alt="原型链关系图"></p>
+</li>
+</ul>
+<h2 id="ES5的继承"><a href="#ES5的继承" class="headerlink" title="ES5的继承"></a>ES5的继承</h2><ul>
+<li>call方法 传参是一个一个传，会立刻执行调用该方法的函数</li>
+<li>apply方法 用法和call一样传参方式不同而已，传参是放在数组里直接传的</li>
+<li>bind方法 改变调用该方法的函数的作用域，不会立刻执行函数，返回改变作用域后的函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">  console.log(&apos;我是测试函数&apos;)</span><br><span class="line">  console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">var o = &#123;</span><br><span class="line">  name: &apos;我是o对象&apos;</span><br><span class="line">&#125;</span><br><span class="line">test.call(); // -&gt; window</span><br><span class="line">test.call(o); // -&gt; o对象</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function Father(uname,age)&#123;</span><br><span class="line">  this.uname = uname;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Father.prototype.money = function()&#123;</span><br><span class="line">  console.log(&apos;i have 100$&apos;)</span><br><span class="line">&#125;</span><br><span class="line">function Son(uname,age,score)&#123;</span><br><span class="line">  // 实现继承Father构造函数的属性</span><br><span class="line">  Father.call(this,uname,age);</span><br><span class="line">  this.score = score;</span><br><span class="line">&#125;</span><br><span class="line">var son = new Son(&apos;张三&apos;,18,99)</span><br><span class="line">consnole.log(son)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//apply的应用</span><br><span class="line">var arr = [1,33,45,6,77]</span><br><span class="line">Math.max.apply(Math,arr);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="ES5之前的方法"><a href="#ES5之前的方法" class="headerlink" title="ES5之前的方法"></a>ES5之前的方法</h2><ul>
+<li><p>数组的方法</p>
+<ul>
+<li>forEach() 该方法没有返回值，只会对调用该方法的数组里的每一项执行一次给定的函数，可以使用return跳过当前一次循环<ul>
+<li>Array.forEach((currentItem,index,arr)=&gt;{}) currentItem（当前值） index（索引）  arr（原数组）</li>
+</ul>
+</li>
+<li>map()  该方法会返回一个和调用该方法长度一致的数组<ul>
+<li>Array.map((currentItem,index,arr)=&gt;{return currentItem})</li>
+</ul>
+</li>
+<li>filter()  该方法会返回一个数组<ul>
+<li>filter(item =&gt; {return item &gt; 2})  会筛选出所有大于2的数组项组成的数组</li>
+</ul>
+</li>
+<li>some()  该方法会返回一个布尔值，调用该方法的数组有一项符合给定条件，将会立刻停止遍历返回结果true</li>
+<li>every()  该方法会返回一个布尔值，调用该方法的数组有一项不符合给定条件，将会立刻停止遍历返回结果false</li>
+</ul>
+</li>
+<li><p>字符串的方法</p>
+<ul>
+<li>trim() 不影响字符串本身，返回新的字符串</li>
+</ul>
+</li>
+<li><p>对象方法</p>
+<ul>
+<li>Object.defineProperty(obj,prop,descriptor) descriptor是以对象形式{}书写的 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(obj,prop,&#123;</span><br><span class="line">  value: &apos;&apos;,//设置属性的值</span><br><span class="line">  writable: boolean,//属性值是否可以被修改</span><br><span class="line">  enumerable: boolean,//目标属性是否可以被枚举</span><br><span class="line">  configurable: boolean,//目标属性是否可以被删除或者是否可以再次修改特性</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><ul>
+<li>高阶函数是对其他函数进行操作的函数，<strong>它接收函数作为参数</strong>或<strong>将函数作为返回值输出</strong></li>
+</ul>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p><strong>闭包</strong>指有权访问另一个函数作用域中<strong>变量</strong>的<strong>函数</strong>  —JavaScript高级程序设计</p>
+<p>简单理解就是，一个作用域可以访问另外一个函数内部的局部变量，这个局部变量所在的函数就是闭包函数</p>
+<p>闭包可以延伸变量的作用域范围，滥用闭包会造成性能问题（内存泄漏）</p>
+<ul>
+<li>变量<ul>
+<li>变量根据作用域的不同分为两种：全局变量和局部变量<ol>
+<li>函数内部可以使用全局变量</li>
+<li>函数外部不可以使用局部变量</li>
+<li>当函数执行完毕，本作用域内的局部变量会被销毁</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式的方法 <code>test()</code> 可以用来检测字符串是否符合正则表达式要求的规范</p>
+<ul>
+<li>边界符 ^:开始、$:结束</li>
+<li>字符类 [] 中括号里面的字符可供选择，只匹配一个 例如： <code>[abc]</code> 只匹配a或者b或者c, <code>[a-z0-9]</code>匹配abc…z和0…9里的任意一个字符 </li>
+<li>量词 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">量词</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td align="center">重复 0-多</td>
+</tr>
+<tr>
+<td align="center">+</td>
+<td align="center">重复 1-多</td>
+</tr>
+<tr>
+<td align="center">?</td>
+<td align="center">重复 0-1</td>
+</tr>
+<tr>
+<td align="center">{n}</td>
+<td align="center">重复n次</td>
+</tr>
+<tr>
+<td align="center">{n,}</td>
+<td align="center">重复n-多</td>
+</tr>
+<tr>
+<td align="center">{n,m}</td>
+<td align="center">重复n-m次</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>量词结合[]设定某个模式出现的次数</p>
+</li>
+<li><p>预定类</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">预定类</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">\d</td>
+<td align="center">[0-9]</td>
+</tr>
+<tr>
+<td align="center">\D</td>
+<td align="center">[^0-9]</td>
+</tr>
+<tr>
+<td align="center">\w</td>
+<td align="center">[A-Za-z0-9]</td>
+</tr>
+<tr>
+<td align="center">\W</td>
+<td align="center">[^A-Za-z0-9]</td>
+</tr>
+<tr>
+<td align="center">\s</td>
+<td align="center">匹配空格[\t\r\n\v\f]</td>
+</tr>
+<tr>
+<td align="center">\S</td>
+<td align="center">匹配非空[^\t\r\n\v\f]</td>
+</tr>
+</tbody></table>
+<h2 id="set数据结构"><a href="#set数据结构" class="headerlink" title="set数据结构"></a>set数据结构</h2><ul>
+<li>Set数据结构会自动去除重复数据 实例方法有add(value)添加某个值返回Set结构本身、delete(value) 删除某个值，返回一个布尔值，表示删除是否成功、has(value)返回一个布尔值，表示该值是否为Set的成员、clear()清除所有成员没有返回值</li>
+</ul>
+
       
 
       
@@ -336,7 +906,7 @@
 <img src="https://vuex.vuejs.org/vuex.png" width="500" />
 
 <h2 id="简单的一个store例子"><a href="#简单的一个store例子" class="headerlink" title="简单的一个store例子"></a>简单的一个store例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    increment(state)&#123;</span><br><span class="line">      state.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>定义玩完store可以利用store.commit来调用mutations里定义的方法</p>
+<p>定义完store可以利用store.commit来调用mutations里定义的方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">store.commit(&apos;increment&apos;)</span><br><span class="line">console.log(store.state.count) // -&gt; 1</span><br></pre></td></tr></table></figure>
 <hr>
 <p><strong>想改变state必须通过提交mutations，这样才能被dev tools检测到改变</strong></p>
@@ -815,7 +1385,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 林伟杰
+    		&copy; 2020 林伟杰
     	</div>
       	<div class="footer-right">
       		欢迎来到我的博客
@@ -898,7 +1468,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -906,7 +1476,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -914,7 +1488,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
               </li>
             
             <div class="clearfix"></div>

@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="林伟杰的博客">
 <meta property="og:description" content="实用功能函数封装记录对于复杂数据类型的拷贝 浅拷贝方法  Object.assign(target,…sources) es6新增可以实现浅拷贝的方法  深拷贝方法  let newData = JSON.parse(JSON.stringify(oldData))或者 1234567891011121314function deepCopy(newObj,oldObj)&amp;#123;  for(v">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-26T02:28:13.766Z">
+<meta property="og:updated_time" content="2020-03-05T06:24:09.615Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="林伟杰的博客" type="application/atom+xml">
@@ -169,6 +169,8 @@
 </ul>
 <p><code>let newData = JSON.parse(JSON.stringify(oldData))</code><br>或者</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy(newObj,oldObj)&#123;</span><br><span class="line">  for(var k in oldObj)&#123;</span><br><span class="line">    var item = oldObj[k];</span><br><span class="line">    if(item instanceof Array)&#123;</span><br><span class="line">      newObj[k] = [];</span><br><span class="line">      deepCopy(newObj[k],item)</span><br><span class="line">    &#125;else if(item instanceof Object)&#123;</span><br><span class="line">      newObj[k] = &#123;&#125;;</span><br><span class="line">      deepCopy(newObj[k],item)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      newObj[k] = item;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象数组根据某一相同项合并其他属性为一个数组"><a href="#对象数组根据某一相同项合并其他属性为一个数组" class="headerlink" title="对象数组根据某一相同项合并其他属性为一个数组"></a>对象数组根据某一相同项合并其他属性为一个数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var objects = [</span><br><span class="line">  &#123;name:&apos;group1&apos;, usedCount: 2, color:&apos;red&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group1&apos;, usedCount: 1, color:&apos;blue&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group1&apos;, usedCount: 1, color:&apos;orange&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group2&apos;, usedCount: 2, color:&apos;blue&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group2&apos;, usedCount: 2, color:&apos;red&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group3&apos;, usedCount: 1, color:&apos;red&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group3&apos;, usedCount: 4, color:&apos;red&apos;&#125;</span><br><span class="line">]</span><br><span class="line">function test()&#123;</span><br><span class="line">var result= objects.reduce((groups, item)=&gt;&#123;</span><br><span class="line">  var groupFound= groups.find(arrItem =&gt; item.name === arrItem.name);</span><br><span class="line">  if(groupFound) &#123;</span><br><span class="line">    groupFound.usedCount += item.usedCount;</span><br><span class="line">    if(groupFound.color.indexOf(item.color)  == -1) &#123;  //去重</span><br><span class="line">      groupFound.color.push(item.color);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    //不要直接在原来的对象修改，新建对象</span><br><span class="line">    var newGroup = &#123;</span><br><span class="line">        name: item.name,</span><br><span class="line">        usedCount: item.usedCount,</span><br><span class="line">        color: [item.color]</span><br><span class="line">    &#125;</span><br><span class="line">    groups.push(newGroup);</span><br><span class="line">  &#125;</span><br><span class="line">  return groups;</span><br><span class="line">&#125;,[]);</span><br><span class="line">console.log(result)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -293,7 +295,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实用功能函数封装记录"><span class="toc-number">1.</span> <span class="toc-text">实用功能函数封装记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对于复杂数据类型的拷贝"><span class="toc-number">1.1.</span> <span class="toc-text">对于复杂数据类型的拷贝</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#实用功能函数封装记录"><span class="toc-number">1.</span> <span class="toc-text">实用功能函数封装记录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#对于复杂数据类型的拷贝"><span class="toc-number">1.1.</span> <span class="toc-text">对于复杂数据类型的拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象数组根据某一相同项合并其他属性为一个数组"><span class="toc-number">1.2.</span> <span class="toc-text">对象数组根据某一相同项合并其他属性为一个数组</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -405,19 +407,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -425,7 +415,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,7 +423,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">项目案例</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">微信小程序</a>
               </li>
             
             <div class="clearfix"></div>

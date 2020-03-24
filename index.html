@@ -138,6 +138,243 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于Promise" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020-03-24-%E5%85%B3%E4%BA%8EPromise/">关于Promise</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2020-03-24-%E5%85%B3%E4%BA%8EPromise/" class="archive-article-date">
+  	<time datetime="2020-03-24T09:02:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="关于异步函数先后顺序调用问题"><a href="#关于异步函数先后顺序调用问题" class="headerlink" title="关于异步函数先后顺序调用问题"></a>关于异步函数先后顺序调用问题</h2><h3 id="写法一"><a href="#写法一" class="headerlink" title="写法一"></a>写法一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function p1()&#123;</span><br><span class="line">    return new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            console.log(1)</span><br><span class="line">            resolve(&apos;我是第一个参数&apos;)</span><br><span class="line">        &#125;,3000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p1().then(res=&gt;&#123;</span><br><span class="line">    console.log(res)</span><br><span class="line">    return new Promise((resolve,reject)=&gt;&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            console.log(2)</span><br><span class="line">            resolve(&apos;我是第二个参数&apos;)</span><br><span class="line">        &#125;,2000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;).then(res=&gt;console.log(res))</span><br></pre></td></tr></table></figure>
+<h3 id="写法二"><a href="#写法二" class="headerlink" title="写法二"></a>写法二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">function p1() &#123;</span><br><span class="line">  return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      console.log(1)</span><br><span class="line">      resolve(&apos;我是第1个&apos;)</span><br><span class="line">    &#125;, 3000)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function p2() &#123;</span><br><span class="line">  return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      console.log(2)</span><br><span class="line">      resolve(&apos;我是第2个&apos;)</span><br><span class="line">    &#125;, 2000)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function p3() &#123;</span><br><span class="line">  return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">      console.log(3)</span><br><span class="line">      resolve(&apos;我是第三个&apos;)</span><br><span class="line">    &#125;, 1000)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p1().then(res=&gt;&#123;</span><br><span class="line">  console.log(res)</span><br><span class="line">&#125;).then(p2).then(res =&gt; &#123;</span><br><span class="line">  console.log(res)</span><br><span class="line">&#125;).then(p3).then(res =&gt; &#123;</span><br><span class="line">  console.log(res)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>或者可以用 <code>async</code> <code>await</code> 写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">async function test()&#123;</span><br><span class="line">  let a1 = await p1()</span><br><span class="line">  let a2 = await p2()</span><br><span class="line">  let a3 = await p3()</span><br><span class="line">  console.log(a1,a2,a3)</span><br><span class="line">&#125;</span><br><span class="line">test()</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">Promise</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020-03-24-%E5%85%B3%E4%BA%8EPromise/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-微信小程序笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020-03-13-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0/">微信小程序笔记</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2020-03-13-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-03-13T05:56:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">微信小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020-03-13-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-项目案例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020-03-05-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B/">项目案例</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2020-03-05-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B/" class="archive-article-date">
+  	<time datetime="2020-03-05T06:17:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="公众号地图小工具"><a href="#公众号地图小工具" class="headerlink" title="公众号地图小工具"></a>公众号地图小工具</h2><p><a href="https://tools.lsboot.cn/wxmap" target="_blank" rel="noopener">公众号地图小工具</a></p>
+<p><a href="https://lsmm.bmtest.lsboot.cn/mlindex" target="_blank" rel="noopener">素材库</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">项目案例</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020-03-05-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue组件间通信的方法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -261,8 +498,33 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前端资源"><a href="#前端资源" class="headerlink" title="前端资源"></a>前端资源</h2><p><a href="https://www.cnblogs.com/chenyablog/p/5551143.html#4376045" target="_blank" rel="noopener">陈亚博客资源整合 传送门</a></p>
+        <h2 id="javascript资源"><a href="#javascript资源" class="headerlink" title="javascript资源"></a>javascript资源</h2><p><a href="https://www.cnblogs.com/chenyablog/p/5551143.html#4376045" target="_blank" rel="noopener">陈亚博客资源整合 传送门</a></p>
 <p><a href="https://www.cnblogs.com/chenyablog/p/6477866.html" target="_blank" rel="noopener">javaScript遍历对象、数组总结</a></p>
+<p><a href="https://www.jianshu.com/p/dfa5c043c5be" target="_blank" rel="noopener">关于js-xlsx excel导出的学习资源</a></p>
+<p><a href="https://www.yiibai.com/git" target="_blank" rel="noopener">易百教程git速查资源</a></p>
+<p><a href="https://www.cnblogs.com/code-sayhi/articles/10069147.html" target="_blank" rel="noopener">git常用命令</a></p>
+<p><a href="https://es6.ruanyifeng.com/" target="_blank" rel="noopener">阮一峰老师的es6学习资源</a></p>
+<p><a href="https://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="noopener">nodejs入门学习中文版电子书</a></p>
+<p><a href="https://juejin.im/post/59097cd7a22b9d0065fb61d2" target="_blank" rel="noopener">掘金社区 手摸手，带你用vue撸后台 系列</a></p>
+<p><a href="https://risingstars.js.org/2019/zh/#section-all" target="_blank" rel="noopener">javascript明星项目</a></p>
+<p><a href="https://ts.xcatliu.com/" target="_blank" rel="noopener">TypeScript入门学习资源</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html" target="_blank" rel="noopener">npm script使用指南</a></p>
+<h2 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h2><p><a href="http://nodejs.cn/" target="_blank" rel="noopener">nodejs中文文档</a></p>
+<h2 id="关于科学上网的方法"><a href="#关于科学上网的方法" class="headerlink" title="关于科学上网的方法"></a>关于科学上网的方法</h2><ol>
+<li><p>谷歌浏览器插件 <strong>Astar VPN</strong>  <a href="https://chrome.google.com/webstore/search/astart%20vpn" target="_blank" rel="noopener">Astart VPN</a></p>
+</li>
+<li><p><a href="https://github.com/shadowsocks/shadowsocks-windows/releases/tag/4.1.9.2" target="_blank" rel="noopener">shadowsocks</a></p>
+<ol>
+<li>下载两个.zip的文件</li>
+<li>解压后把shadowsocks.exe复制到文件夹内</li>
+<li><a href="https://free-ss.site/" target="_blank" rel="noopener">打开免费节点网站</a>挑选一个使用</li>
+</ol>
+</li>
+<li><p><a href="https://tunsafe.com/" target="_blank" rel="noopener">tunsafe</a></p>
+</li>
+<li><p><a href="http://ironcloud.pw" target="_blank" rel="noopener">金属云ssr机场</a></p>
+</li>
+</ol>
 
       
 
@@ -390,6 +652,14 @@
 <p>2、你可以在其它文件或模块中通过import+(常量 | 函数 | 文件 | 模块)名的方式，将其导入，以便能够对其进行使用</p>
 <p>3、在一个文件或模块中，export可以有多个，export default仅有一个</p>
 <p>4、通过export方式导出，在导入时要加{ }，export default则不需要</p>
+<h2 id="nodejs笔记"><a href="#nodejs笔记" class="headerlink" title="nodejs笔记"></a>nodejs笔记</h2><p><a href="http://nodejs.cn/" target="_blank" rel="noopener">nodejs中文文档</a></p>
+<ol>
+<li><p>require()函数在加载外部文件的时候会执行文件内的代码，并缓存在内存中，第二次加载直接从缓存中读取，不执行文件内部代码</p>
+</li>
+<li><p>node代码调试，使用 <code>node --inspect-brk 要执行的文件</code> 然后到 <a href="chrome://inspect/#devices" target="_blank" rel="noopener">chrome调试地址</a> 进行调试</p>
+</li>
+</ol>
+<p>4-1</p>
 
       
 
@@ -476,6 +746,8 @@
 </ul>
 <p><code>let newData = JSON.parse(JSON.stringify(oldData))</code><br>或者</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function deepCopy(newObj,oldObj)&#123;</span><br><span class="line">  for(var k in oldObj)&#123;</span><br><span class="line">    var item = oldObj[k];</span><br><span class="line">    if(item instanceof Array)&#123;</span><br><span class="line">      newObj[k] = [];</span><br><span class="line">      deepCopy(newObj[k],item)</span><br><span class="line">    &#125;else if(item instanceof Object)&#123;</span><br><span class="line">      newObj[k] = &#123;&#125;;</span><br><span class="line">      deepCopy(newObj[k],item)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      newObj[k] = item;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象数组根据某一相同项合并其他属性为一个数组"><a href="#对象数组根据某一相同项合并其他属性为一个数组" class="headerlink" title="对象数组根据某一相同项合并其他属性为一个数组"></a>对象数组根据某一相同项合并其他属性为一个数组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var objects = [</span><br><span class="line">  &#123;name:&apos;group1&apos;, usedCount: 2, color:&apos;red&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group1&apos;, usedCount: 1, color:&apos;blue&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group1&apos;, usedCount: 1, color:&apos;orange&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group2&apos;, usedCount: 2, color:&apos;blue&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group2&apos;, usedCount: 2, color:&apos;red&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group3&apos;, usedCount: 1, color:&apos;red&apos;&#125;,</span><br><span class="line">  &#123;name:&apos;group3&apos;, usedCount: 4, color:&apos;red&apos;&#125;</span><br><span class="line">]</span><br><span class="line">function test()&#123;</span><br><span class="line">var result= objects.reduce((groups, item)=&gt;&#123;</span><br><span class="line">  var groupFound= groups.find(arrItem =&gt; item.name === arrItem.name);</span><br><span class="line">  if(groupFound) &#123;</span><br><span class="line">    groupFound.usedCount += item.usedCount;</span><br><span class="line">    if(groupFound.color.indexOf(item.color)  == -1) &#123;  //去重</span><br><span class="line">      groupFound.color.push(item.color);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    //不要直接在原来的对象修改，新建对象</span><br><span class="line">    var newGroup = &#123;</span><br><span class="line">        name: item.name,</span><br><span class="line">        usedCount: item.usedCount,</span><br><span class="line">        color: [item.color]</span><br><span class="line">    &#125;</span><br><span class="line">    groups.push(newGroup);</span><br><span class="line">  &#125;</span><br><span class="line">  return groups;</span><br><span class="line">&#125;,[]);</span><br><span class="line">console.log(result)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -1069,317 +1341,10 @@
 
 
   
-    <article id="post-关于vue中process的疑惑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019-12-03-%E5%85%B3%E4%BA%8Evue%E4%B8%ADprocess%E7%9A%84%E7%96%91%E6%83%91/">关于vue中process的疑惑</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2019-12-03-%E5%85%B3%E4%BA%8Evue%E4%B8%ADprocess%E7%9A%84%E7%96%91%E6%83%91/" class="archive-article-date">
-  	<time datetime="2019-12-03T08:33:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>process对象是一个全局变量，提供了有关当前Node.js进程的信息并对其进行控制   </p>
-<p><a href="https://www.jianshu.com/p/b8653db36326" target="_blank" rel="noopener">process相关答疑</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2019-12-03-%E5%85%B3%E4%BA%8Evue%E4%B8%ADprocess%E7%9A%84%E7%96%91%E6%83%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-github高效寻找开源项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019-11-29-github%E9%AB%98%E6%95%88%E5%AF%BB%E6%89%BE%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">github高效寻找开源项目</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2019-11-29-github%E9%AB%98%E6%95%88%E5%AF%BB%E6%89%BE%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" class="archive-article-date">
-  	<time datetime="2019-11-29T11:45:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="在搜索栏便捷搜索你感兴趣的内容"><a href="#在搜索栏便捷搜索你感兴趣的内容" class="headerlink" title="在搜索栏便捷搜索你感兴趣的内容"></a>在搜索栏便捷搜索你感兴趣的内容</h2><ul>
-<li>in:name 项目名包含的关键字  可以搜索项目名包含你感兴趣的关键字</li>
-<li>stars:&gt;1000 寻找星星数大于1000的项目</li>
-<li>forks:&gt;1000 同上</li>
-<li>in:readme 关键词  搜索readme包含的关键词</li>
-<li>in:description 关键词 同上</li>
-<li>pushed:&gt;2019-11-01 搜索最后一次更新时间大于2019-11-01的项目</li>
-<li>language:python 搜索开发语言是python的项目</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2019-11-29-github%E9%AB%98%E6%95%88%E5%AF%BB%E6%89%BE%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Markdown基本语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019-11-24-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">Markdown基本语法</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2019-11-24-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2019-11-23T23:33:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="markdown基础语法"><a href="#markdown基础语法" class="headerlink" title="markdown基础语法"></a>markdown基础语法</h1><h2 id="一、标题"><a href="#一、标题" class="headerlink" title="一、标题"></a>一、标题</h2><p>在想要设置未标题的文字前面加#来表示<br>一个#是一级标题，二个#是二级标题，以此类推。共有六级标题。</p>
-<h2 id="二、字体"><a href="#二、字体" class="headerlink" title="二、字体"></a>二、字体</h2><ul>
-<li>加粗： 要加粗的文字左右分别用两个*号抱起来</li>
-<li>斜体： 要倾斜的文字左右分别用一个*号包起来</li>
-<li>斜体加粗： 要倾斜和加粗的文字左右分别用三个*号包起来</li>
-<li>删除线： 要加删除线的文字左右分别用两个~~号包起来</li>
-</ul>
-<h2 id="三、引用"><a href="#三、引用" class="headerlink" title="三、引用"></a>三、引用</h2><p>在引用文字前面加&gt;即可。引号也可以嵌套，入加两个&gt;&gt;三个&gt;&gt;&gt; 一直加下去</p>
-<blockquote>
-<p>引用</p>
-<blockquote>
-<p>引用</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>引用</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="四、分割线"><a href="#四、分割线" class="headerlink" title="四、分割线"></a>四、分割线</h2><h2 id="三个或者三个以上的-或者-都可以。"><a href="#三个或者三个以上的-或者-都可以。" class="headerlink" title="三个或者三个以上的 - 或者 * 都可以。"></a>三个或者三个以上的 - 或者 * 都可以。</h2><hr>
-<hr>
-<hr>
-<h2 id="五、图片"><a href="#五、图片" class="headerlink" title="五、图片"></a>五、图片</h2><p>![图片alt](图片地址 ‘’图片title’’)</p>
-<p><img src="http://static.runoob.com/images/runoob-logo.png" alt="RUNOOB 图标" title="RUNOOB"></p>
-<p>图片alt就是显示在图片下面的文字，相当于对图片内容的解释。<br>图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</p>
-<h2 id="六、超链接"><a href="#六、超链接" class="headerlink" title="六、超链接"></a>六、超链接</h2><p><a href="超链接地址" title="超链接title">超链接名</a></p>
-<p><a href="http://jianshu.com" target="_blank" rel="noopener">简书</a><br><a href="http://baidu.com" target="_blank" rel="noopener">百度</a></p>
-<h2 id="七、列表"><a href="#七、列表" class="headerlink" title="七、列表"></a>七、列表</h2><ul>
-<li>无序列表： - + * 任何一种都可以</li>
-<li>有序列表：数字加点</li>
-<li>列表嵌套：上一级和下一级之间敲三个空格即可</li>
-</ul>
-<h2 id="八、表格"><a href="#八、表格" class="headerlink" title="八、表格"></a>八、表格</h2><table>
-<thead>
-<tr>
-<th>表头</th>
-<th align="center">表头</th>
-<th align="right">表头</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>内容</td>
-<td align="center">内容</td>
-<td align="right">内容</td>
-</tr>
-<tr>
-<td>内容</td>
-<td align="center">内容</td>
-<td align="right">内容</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th align="center">爱好</th>
-<th align="right">技能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>真诚</td>
-<td align="center">睡觉</td>
-<td align="right">游泳</td>
-</tr>
-</tbody></table>
-<h2 id="九、代码"><a href="#九、代码" class="headerlink" title="九、代码"></a>九、代码</h2><p>单行代码：代码之间分别用一个反引号包起来</p>
-<p><code>我是代码</code><br><code>我是多行代码</code></p>
-<h2 id="十、等待完善。。。"><a href="#十、等待完善。。。" class="headerlink" title="十、等待完善。。。"></a>十、等待完善。。。</h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2019-11-24-Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -1473,19 +1438,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1493,7 +1446,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1501,7 +1454,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">项目案例</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">微信小程序</a>
               </li>
             
             <div class="clearfix"></div>

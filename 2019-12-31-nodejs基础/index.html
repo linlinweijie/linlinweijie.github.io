@@ -17,7 +17,7 @@
 <meta property="og:description" content="nodejs nodejs是一个javaScript运行时环境  nodejs的特性    事件驱动 非阻塞IO模型（异步） 轻量和高效   使用nodemon来帮我们解决频繁修改代码重启服务器的问题   npm install --global nodemon nodemon app.js 验证是否安装成功 nodemon --version   B&#x2F;S编程模型  学习资源   HTTP Mim">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;1578394348.jpg">
-<meta property="og:updated_time" content="2020-02-11T03:57:37.305Z">
+<meta property="og:updated_time" content="2020-03-11T10:01:04.311Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;images&#x2F;1578394348.jpg">
   
@@ -212,6 +212,14 @@
 <p>2、你可以在其它文件或模块中通过import+(常量 | 函数 | 文件 | 模块)名的方式，将其导入，以便能够对其进行使用</p>
 <p>3、在一个文件或模块中，export可以有多个，export default仅有一个</p>
 <p>4、通过export方式导出，在导入时要加{ }，export default则不需要</p>
+<h2 id="nodejs笔记"><a href="#nodejs笔记" class="headerlink" title="nodejs笔记"></a>nodejs笔记</h2><p><a href="http://nodejs.cn/" target="_blank" rel="noopener">nodejs中文文档</a></p>
+<ol>
+<li><p>require()函数在加载外部文件的时候会执行文件内的代码，并缓存在内存中，第二次加载直接从缓存中读取，不执行文件内部代码</p>
+</li>
+<li><p>node代码调试，使用 <code>node --inspect-brk 要执行的文件</code> 然后到 <a href="chrome://inspect/#devices" target="_blank" rel="noopener">chrome调试地址</a> 进行调试</p>
+</li>
+</ol>
+<p>4-1</p>
 
       
 
@@ -337,7 +345,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nodejs"><span class="toc-number">1.</span> <span class="toc-text">nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6模块规范"><span class="toc-number">2.</span> <span class="toc-text">ES6模块规范</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#nodejs"><span class="toc-number">1.</span> <span class="toc-text">nodejs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6模块规范"><span class="toc-number">2.</span> <span class="toc-text">ES6模块规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nodejs笔记"><span class="toc-number">3.</span> <span class="toc-text">nodejs笔记</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -449,19 +457,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -469,7 +465,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,7 +473,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">项目案例</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Promise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">微信小程序</a>
               </li>
             
             <div class="clearfix"></div>

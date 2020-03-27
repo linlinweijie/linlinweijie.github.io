@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue组件间通信的方法总结 | 林伟杰的博客</title>
+  <title>&#39;python基础笔记&#39; | 林伟杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现 父组件向子组件传数据  父组件用 v-bind:data 来向子组件传入数据  例如: &amp;lt;child-com :childDefProp=&amp;#39;data&amp;#39; &#x2F;&amp;gt; 子组件内需要定义响应的 prop 形参来接收 例如： props: [&amp;#39;childDefProp&amp;#39;]">
-<meta name="keywords" content="随笔,vue">
+  <meta name="description" content="xmanage519.09.11 ls  –  list  [-option]  -a (all) -l -h(human)(配合-l使用，单独使用无效) ls结合通配符* ? []pwd – print work directorycd – change directorytouch – touchmkdir – make directory [-option] -p(递归创建目录)rm – r">
+<meta name="keywords" content="随笔,python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue组件间通信的方法总结">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93&#x2F;index.html">
+<meta property="og:title" content="&#39;python基础笔记&#39;">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020-03-26-python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="林伟杰的博客">
-<meta property="og:description" content="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现 父组件向子组件传数据  父组件用 v-bind:data 来向子组件传入数据  例如: &amp;lt;child-com :childDefProp=&amp;#39;data&amp;#39; &#x2F;&amp;gt; 子组件内需要定义响应的 prop 形参来接收 例如： props: [&amp;#39;childDefProp&amp;#39;]">
+<meta property="og:description" content="xmanage519.09.11 ls  –  list  [-option]  -a (all) -l -h(human)(配合-l使用，单独使用无效) ls结合通配符* ? []pwd – print work directorycd – change directorytouch – touchmkdir – make directory [-option] -p(递归创建目录)rm – r">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-05T06:00:28.670Z">
+<meta property="og:updated_time" content="2020-03-27T02:32:28.082Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="林伟杰的博客" type="application/atom+xml">
@@ -140,52 +140,158 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue组件间通信的方法总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-python基础笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue组件间通信的方法总结
+      &#39;python基础笔记&#39;
     </h1>
   
 
         
-        <a href="/blog/2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-03-05T03:20:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+        <a href="/blog/2020-03-26-python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-03-26T15:58:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"><a href="#各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现" class="headerlink" title="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"></a>各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现</h2><ul>
-<li><p>父组件向子组件传数据</p>
-<ol>
-<li>父组件用 <code>v-bind:data</code> 来向子组件传入数据  例如: <code>&lt;child-com :childDefProp=&#39;data&#39; /&gt;</code></li>
-<li>子组件内需要定义响应的 prop 形参来接收 例如： <code>props: [&#39;childDefProp&#39;]</code> </li>
-</ol>
-</li>
-<li><p>子组件调用父组件中的方法，利用 <code>$emit()</code> 方法实现</p>
-<ol>
-<li>父组件需要将定义的方法用 <code>v-on:(自定义事件名称)</code> 传递给子组件 例如： <code>&lt;child-com @defEvent=&#39;fatherMethod&#39; /&gt;</code></li>
-<li>子组件内使用 <code>this.$emit(&#39;defEvent&#39;)</code> 触发事件</li>
-</ol>
-</li>
-<li><p>子组件传递数据给父组件，利用 <code>$emit()</code> 的第二个参数来传递</p>
-<ol>
-<li>利用子组件调用父组件的方法将所需要传递的数据填入 <code>$emit(&#39;defEvent&#39;,data)</code> data中，父组件中的方法定义一个形参来接收data</li>
-</ol>
-</li>
-<li><p>父组件调用子组件中的方法直接可以用 ref 属性找到子组件 直接用 . 查找触发</p>
-</li>
+        <p>xmanage5<br>19.09.11</p>
+<p>ls  –  list  [-option]  -a (all) -l -h(human)(配合-l使用，单独使用无效) ls结合通配符* ? []<br>pwd – print work directory<br>cd – change directory<br>touch – touch<br>mkdir – make directory [-option] -p(递归创建目录)<br>rm – remove [-option] -r(递归删除) -f(强制删除，文件不存在也不提示错误)<br>clear – clear</p>
+<p>cp – copy  [-option] -i -r<br>mv – move  -i(防止不小心覆盖同名文件)     (移动到当前目录可以重命名)</p>
+<p>cat  [-option]  -b  -n<br>more  space,enter,b,f,q,/word<br>grep  [-option] -n -v -i  (可以使用正则查找)<br>echo<br>重定向 &gt;，&gt;&gt;<br>管道 |</p>
+<p>which 命令 (可以查看命令在什么位置)</p>
+<p>tree [-option] -d</p>
+<p>shutdown [-option] -r -c   shutdown -r 20:30</p>
+<p>ssh -p 22 user@remote</p>
+<p>scp -P 22 01.py user@remote:Desktop/01.py  [-option]  -r  -P<br>scp -P 22  user@remote:Desktop/01.py 01.py</p>
+<p>免密登录设置</p>
+<p>1.ssh-keygen<br>ssh-copy-id user@remote</p>
+<p>~/.ssh/config  配置别名<br>Host 远程计算机别名<br>    HostName ip地址<br>    User 用户名<br>    Port 22</p>
+<p>chmod +/-  文件名|目录名<br>chmod -R 753 文件名|目录名<br>执行格式  ./文件名</p>
+<p>su [-] （switch user）<br>sudo（切换到该用户执行一次）</p>
+<p>groupadd 组名<br>groupdel 组名</p>
+<p>chgrp -R 组名 文件/目录名</p>
+<p>cat /etc/group</p>
+<p>useradd -m -g 组 新建用户名<br>passwd 用户名<br>user -r 用户名<br>cat /etc/passwd | grep 用户名</p>
+<p>id</p>
+<p>usermod -g 组 用户名（修改主组）<br>usermod -G 组 用户名(修改附加组)</p>
+<p>who<br>whoami<br>usermod -s /bin/bash 用户名<br>witch 要查看的命令保存在哪</p>
+<p>chown [-R] 用户名 文件名|目录名<br>date<br>cal [-y] (calendar)<br>df [-h] (disk free)<br>du [-h] (disk usage)<br>ps [aux]<br>top<br>kill [-9] 进程代号</p>
+<p>find [路劲] -name “.py”</p>
+<p>ln [-s] 被链接源文件绝对路劲 链接文件</p>
+<p>tar -cvf 打包文件.tar 被打包的文件/路径<br>tar -xvf 打包好的文件.tar</p>
+<p>gzip打包方法<br>tar -zcvf 打包文件.tar.gz 被压缩的文件/路径<br>tar -zxvf 打包好的文件.tar.gz<br>tar -zxvf 打包好的文件.tar.gz -C 目标路径(指定路径解压)</p>
+<p>bzip2打包方法<br>tar -jcvf 打包文件.tar.bz2 被压缩的文件/路径<br>tar -jxvf 打包好的文件.tar.bz2</p>
+<p>apt [install,remove,upgrade] 软件名 （安装，卸载，更新）</p>
+<p>配置软件源（具体自己百度）</p>
+<hr>
+<p>python开始</p>
+<p>执行python的三种方式<br>  1.解释器 – python/python3<br>  2.交互式–ipython/ipython3<br>  3.集成开发环境–PyCharm</p>
+<p>强大的ipython交互式解释器()</p>
+<p>PyCharm(python IDE)</p>
+<h2 id="语法开始"><a href="#语法开始" class="headerlink" title="语法开始"></a>语法开始</h2><p>命名文件建议只用小写字母，数字和下划线</p>
+<ul>
+<li>, - , * , / , % , // , **</li>
 </ul>
-<h2 id="关于-sync修饰符可以实现父子组件双向绑定数据"><a href="#关于-sync修饰符可以实现父子组件双向绑定数据" class="headerlink" title="关于 .sync修饰符可以实现父子组件双向绑定数据"></a>关于 .sync修饰符可以实现父子组件双向绑定数据</h2><ul>
-<li><p>.sync是一个编译时的语法糖，他会被自动扩展为一个自动更新父组件属性的v-on监听器</p>
-<p>例如： <code>&lt;child-com :foo.sync=&quot;bar&quot; /&gt;</code> 会扩展为 <code>&lt;child-com :foo=&quot;bar&quot; @update:foo=&quot;val =&gt; foo = val&quot; /&gt;</code><br>此时 child-com 组件内部显示的触发 <code>this.$emit(&#39;update:foo&#39;,newVal)</code> 就可以将 newVal 更新到父组件中的 foo 变量中</p>
-</li>
-</ul>
+<p>变量的定义</p>
+<p>变量名 = 值 （每个变量在使用前必须赋值，变量赋值以后该变量才会被创建）</p>
+<p>数据类型（数字型，非数字型）</p>
+<p>数字型<br>  整型 int  python2.x分为（int,long）<br>  浮点型 float<br>  布尔型 bool (参与运算就是 0 或者 1 )<br>    真 True 非0数 – 非零即真<br>    假 False 0<br>  复数型 complex<br>    主要用于科学计算</p>
+<p>非数字型<br>  字符串<br>  列表<br>  元组<br>  字典</p>
+<p>可以用 type(variate) 检测数据类型</p>
+<p>input()函数的用法<br>password = input(“请输入密码”)  (都是str类型)</p>
+<p>类型转换函数<br>  int(x) 将x转换为一个整数<br>  float(x) 将x转换为一个小数</p>
+<p>变量格式化输出<br>  %s 字符串<br>  %d 有符号十进制整数，%06d表示输出的整数显示位数，不足6位的用0补全<br>  %f 浮点数，%.02f表示小数点后只显示两位<br>  %% 输出%<br>语法<br>  print(“格式化字符串” % 变量1)<br>  print(“格式化字符串” % (变量1,变量2，变量3))</p>
+<p>查看python中的关键字<br>  import keyword<br>  print(keyword.kwlist)</p>
+<p>如果不希望print换行 则可以写成  print(“*”,end=””)  python3.x才有效</p>
+<p>比较运算符和js一样，2.x中不等于还可以用 &lt;&gt; 来表示</p>
+<p>判断语句</p>
+<p>if 条件:<br>    表达式<br>else:<br>    表达式</p>
+<p>if 条件:<br>    表达式<br>elif 条件:<br>    表达式<br>else:<br>    表达式</p>
+<p>判断嵌套<br>if 条件:<br>    if 条件:<br>        表达式<br>    else:<br>        表达式<br>else:<br>    表达式</p>
+<p>逻辑运算符<br>  与and/或or/非not<br>  条件1 and 条件2<br>  条件1or 条件2<br>  not 条件</p>
+<p>查看引入包所提供的方法<br>import random<br>random. + tab键</p>
+<p>循环语句</p>
+<p>i = 0<br>while i&lt;5:<br>    i = i+1<br>循环嵌套<br>i=0<br>j=0<br>while i&lt;5:<br>    while j&lt;4:<br>        j+=1<br>    i+=1</p>
+<p>函数的定义</p>
+<p>def 函数名():<br>    函数封装的代码</p>
+<p>给函数添加文档注释<br>‘’’文档注释’’’       pycharm在函数调用的位置CTRL+Q 可以快速查看</p>
+<p>模块<br>  模块可以用import导入<br>  每个.py的python源文件都是一个模块<br>  在模块中定义的全局变量，函数都是模块能提供给外界直接使用的工具</p>
+<p>列表（List） 类似 数组 用  [ ] 定义<br>  mylist = [“zhangsan”,”lisi”,”wangwu”]<br>  mylist.sort()  升序排序<br>  mylist.sort(reverse=True)  降序排序<br>  mylist.reverse()  反转    </p>
+<p>元组（Tuple）与列表类似，但是元组的元素不能修改  用( ) 定义</p>
+<p>元组 -&gt; 列表  list(tuple)<br>列表 -&gt; 元组 tuple(list)</p>
+<p>字典 是无序的数据集合，使用print函数输出字典时输出顺序和定义顺序不一致 (dictionary) 用 { } 定义<br>  字典.keys() 所有key列表<br>  字典.values()所有value列表<br>  字典.items()所有(key,value)元组列表<br>取值<br>  字典[‘键名’]<br>增加/修改<br>  字典[‘键名’] = 值<br>删除<br>  字典.pop(‘键名’)</p>
+<p>string.isspace() 也能检测 \t,\n,\r<br>string.isdecimal() [比较常用，判断单纯数字]<br>string.isdigit()<br>string.isnumeric()</p>
+<p>string.startswith(str)  以str开头则返回True<br>string.endswith(str)<br>string.find(str) 返回索引位置<br>string.replace(str1,str2)  str1替换成str2  执行完返回新的字符串，不会修改原字符串</p>
+<p>string.center(10,” “)<br>string.ljust(10)<br>string.rjust(10)</p>
+<p>string.lstrip()<br>string.rstrip()<br>string.strip()</p>
+<p>string.split(str=””,num)<br>string.join(序列)  “ “.join(list)  使用” “空格作为分隔符          293集</p>
+<p>字符串切片<br>string[开始索引:结束索引:步长]<br>列表，元组都支持切片</p>
+<p>公共方法<br>  len()<br>  del()<br>  max()<br>  min()<br>  com(item1,item2)  python3.x取消了</p>
+<p>成员操作符   in<br>1 in [0,1,2]  True<br>1 not in [0,1,2] False</p>
+<p>for循环</p>
+<p>  for 变量 in 集合:<br>      循环体<br>  else:<br>      没有通过break退出循环，循环结束后，会执行的代码</p>
+<p>如果在开发程序时，不需要先编写分支内部的代码 可以用 pass占位<br>if 条件:<br>  pass<br>else:<br>  pass</p>
+<p>shebang<br>#! /usr/bin/python3</p>
+<p>id() 查看变量在内存中的地址</p>
+<p>可变类型和不可变类型<br>  不可变类型：<br>    1.数字类型 int,bool,float,complex,long(2.x)<br>    2.字符串 str<br>    3.元组 tuple<br>  可变类型<br>    1.列表 list<br>    2.字典 dict</p>
+<p>python 在函数内部使用赋值语句是不允许直接修改全局变量的，只会在函数内部定义一个局部变量（如果需要修改全局变量，需要使用global关键字声明就可以）<br>例子:<br>num = 10<br>def demo():<br>  golbal num<br>  num = 3</p>
+<h1 id="此时-num的只为3"><a href="#此时-num的只为3" class="headerlink" title="此时 num的只为3"></a>此时 num的只为3</h1><p>开发中代码顺序</p>
+<pre><code>shebang
+import模块
+全局变量
+函数定义
+执行代码</code></pre><p>函数返回多个数据可以返回一个元组，此时小括号可以省略， return a,b     # 返回结果是(a,b)</p>
+<p>可以定义多个变量一次接受函数返回的元组   gl_a,gl_b = return a,b     需要个数顺序一致</p>
+<p>交换 a,b的值      a,b = b,a</p>
+<p>函数传入的参数如果是可变类型，使用方法修改变量内容会影响到外部变量</p>
+<p>列表变量使用+=实际是调用列表的extend()方法</p>
+<p>函数参数有默认值的应该放在参数的末尾</p>
+<p>定义接收多值参数<br>  参数名前增加一个 * 可以接收元组  <em>args<br>  参数名前增加两个个 * 可以接收字典  *</em>kwargs<br>元组，字典的拆包  在变量之前分别加 * ， **</p>
+<p>递归<br>  函数自己调用自己，针对参数满足某个条件时跳出函数（递归的出口）</p>
+<hr>
+<p>python 面向对象</p>
+<p>内置函数  dir()  可以查看传入参数的内置方法</p>
+<p>定义类<br>  class 类名:                              注意类要用大驼峰命名<br>      def 方法1(self,参数列表):<br>          pass<br>      def 方法2(self,参数列表):<br>          pass</p>
+<p>创建类   对象变量 = 类名()</p>
+<p>类的初始化方法 <strong>init</strong>()   在类创建对象的时候会自动执行<strong>init</strong>()</p>
+<p>类初始化属性<br>class cat:<br>    def <strong>init</strong>(self):<br>        self.name =”tom”</p>
+<p>如果定义属性的时候不确定要定义什么值，可以先用 None占位</p>
+<p>身份运算符 is , is not<br>x is y  判断s和y内存地址是否相等</p>
+<p>定义私有属性，私有方法，可以再定义的时候前面添加两个下划线 “<strong>“  此时只能在类里访问，在外面访问不到，在子类中也访问不到父类的隐私<br>在Python中没有真正的私有的 可以通过 (_类名</strong>私有) 可以访问得到，但是不建议在外界访问</p>
+<p>继承的语法<br>class 类名(父类名):<br>    pass</p>
+<p>对父类的方法进行扩展可以使用  super().父类方法  来调用父类的方法 python2.x不支持<br>2.x 支持 ：父类名.方法(self)</p>
+<p>多继承可以查看 <strong>mro</strong>来看继承顺序</p>
+<p>类方法的语法<br>@classmethod<br>def 类方法名(cls):<br>    pass</p>
+<p>类的静态方法<br>@staticmethod<br>def 类的方法名():<br>    pass</p>
+<p>单例设计模式  <strong>new</strong>(cls)   这个object基类提供的内置方法<br>class test(object):<br>    instant = None<br>    def <strong>new</strong>(cls, <em>args, *</em>kwargs):<br>        if cls.instant is None:<br>            cls.instant = super().<strong>new</strong>(cls)<br>        return cls.instant</p>
+<pre><code>def __init__(self):
+    print(&quot;我是初始化方法&quot;)</code></pre><p>try:<br>    pass<br>except 错误类型:<br>    pass</p>
+<p>(错误类型是跑出异常的第一个单词)</p>
+<p>捕获未知错误<br>except Exception as result:<br>    print(“未知错误%s” % result)</p>
+<p>异常捕获的完整语法</p>
+<p>try:<br>    #尝试执行的代码<br>    pass<br>except 错误类型1:<br>    #针对错误类型1执行的代码<br>   pass<br>except (错误类型2，错误类型3):<br>   #针对错误类型2,3执行的代码<br>    pass<br>except Exception as result:<br>    print(“错误类型%s” % result)<br>else:<br>    #没有异常才会执行的代码<br>    pass<br>finally:<br>    #无论是否有异常，都会执行的代码<br>    pass </p>
+<p>主动抛出异常<br>ex = Exception(“密码长度不够”)<br>raise ex</p>
+<p>给模块起个别名<br>import 模块名 as 模块别名</p>
+<p>导入所有工具<br>from 模块 import *<br>(不推荐，容易覆盖同名函数) </p>
+<p><strong>file</strong> 这是模块的内置属性，可以查看模块的完整路径</p>
+<p>原则–每个py文件都是可以被导入的<br>导入模块时文件中没有任何缩进的代码都会被执行一遍</p>
+<p><strong>name</strong> 的用法  <strong>name</strong>在当前文件执行保存的是”<strong>main</strong>“ 在导入模块的地方则输出当前模块名</p>
+<p>if <strong>name</strong> == “<strong>main</strong>“:<br>    main()</p>
+<p>可以再main函数中编写测试代码</p>
+<p>封装模块，新建包，包目录下必须要有<strong>init</strong>.py文件<br>可以在<strong>init</strong>.py中通过 from . import 希望外界能使用的模块名   可以暴露出去</p>
+<p>发布模块<br>1.<br>from distutils.core import setup</p>
+<p>setup(name=”#包名”,version=”1.0 #版本号”，description=”#描述信息”,long_description=”#完整描述信息”,author=”#作者”,author_email=”#作者邮箱”,url=”#个人主页”,py_modules=[“modu_1”,”modu_2”])</p>
+<p>2.在终端用python解释器执行setup.py<br>python3 setup.py build</p>
+<p>3生成发布压缩包<br>python3 setup.py sdist</p>
+<p>压缩包解压<br>package.tar.gz<br>tar zxvf package.tar.gz<br>sudo python3 setup.py install</p>
+<p>安装完毕 </p>
+<p>如果要卸载，找到安装好的包的位置删掉即可</p>
 
       
 
@@ -203,7 +309,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -259,7 +365,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020-03-26-python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +379,18 @@
   
 <nav id="article-nav">
   
-    <a href="/blog/2020-03-05-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2020-03-27-linux%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          项目案例
+          linux基础笔记
         
       </div>
     </a>
   
   
-    <a href="/blog/2020-01-16-%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">资源整合</div>
+    <a href="/blog/2020-03-24-%E5%85%B3%E4%BA%8EPromise/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于Promise</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -311,7 +417,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"><span class="toc-number">1.</span> <span class="toc-text">各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-sync修饰符可以实现父子组件双向绑定数据"><span class="toc-number">2.</span> <span class="toc-text">关于 .sync修饰符可以实现父子组件双向绑定数据</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#语法开始"><span class="toc-number">1.</span> <span class="toc-text">语法开始</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#此时-num的只为3"><span class="toc-number"></span> <span class="toc-text">此时 num的只为3</span></a>
                     </div>
                 </span>
             </div>

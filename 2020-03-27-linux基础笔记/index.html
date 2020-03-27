@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue组件间通信的方法总结 | 林伟杰的博客</title>
+  <title>linux基础笔记 | 林伟杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现 父组件向子组件传数据  父组件用 v-bind:data 来向子组件传入数据  例如: &amp;lt;child-com :childDefProp=&amp;#39;data&amp;#39; &#x2F;&amp;gt; 子组件内需要定义响应的 prop 形参来接收 例如： props: [&amp;#39;childDefProp&amp;#39;]">
-<meta name="keywords" content="随笔,vue">
+  <meta name="description" content="关于linux常用命令 sudo : 暂时切换到超级用户模式以执行超级用户权限，提示输入密码时该密码为当前用户的密码，而不是超级账户的密码。不过有时间限制，Ubuntu默认为一次时长15分钟。  su ： 切换到某某用户模式，提示输入密码时该密码为切换后账户的密码，用法为“su 账户名称”。如果后面不加账户时系统默认为root账户，密码也为超级账户的密码。没有时间限制。  sudo -i : 为了">
+<meta name="keywords" content="随笔,linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue组件间通信的方法总结">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93&#x2F;index.html">
+<meta property="og:title" content="linux基础笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020-03-27-linux%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="林伟杰的博客">
-<meta property="og:description" content="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现 父组件向子组件传数据  父组件用 v-bind:data 来向子组件传入数据  例如: &amp;lt;child-com :childDefProp=&amp;#39;data&amp;#39; &#x2F;&amp;gt; 子组件内需要定义响应的 prop 形参来接收 例如： props: [&amp;#39;childDefProp&amp;#39;]">
+<meta property="og:description" content="关于linux常用命令 sudo : 暂时切换到超级用户模式以执行超级用户权限，提示输入密码时该密码为当前用户的密码，而不是超级账户的密码。不过有时间限制，Ubuntu默认为一次时长15分钟。  su ： 切换到某某用户模式，提示输入密码时该密码为切换后账户的密码，用法为“su 账户名称”。如果后面不加账户时系统默认为root账户，密码也为超级账户的密码。没有时间限制。  sudo -i : 为了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-05T06:00:28.670Z">
+<meta property="og:updated_time" content="2020-03-27T03:57:02.042Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="林伟杰的博客" type="application/atom+xml">
@@ -140,50 +140,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue组件间通信的方法总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-linux基础笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue组件间通信的方法总结
+      linux基础笔记
     </h1>
   
 
         
-        <a href="/blog/2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-03-05T03:20:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+        <a href="/blog/2020-03-27-linux%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-03-27T03:52:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"><a href="#各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现" class="headerlink" title="各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"></a>各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现</h2><ul>
-<li><p>父组件向子组件传数据</p>
-<ol>
-<li>父组件用 <code>v-bind:data</code> 来向子组件传入数据  例如: <code>&lt;child-com :childDefProp=&#39;data&#39; /&gt;</code></li>
-<li>子组件内需要定义响应的 prop 形参来接收 例如： <code>props: [&#39;childDefProp&#39;]</code> </li>
-</ol>
+        <h2 id="关于linux常用命令"><a href="#关于linux常用命令" class="headerlink" title="关于linux常用命令"></a>关于linux常用命令</h2><ul>
+<li><p><code>sudo</code> : 暂时切换到超级用户模式以执行超级用户权限，提示输入密码时该密码为当前用户的密码，而不是超级账户的密码。不过有时间限制，Ubuntu默认为一次时长15分钟。</p>
 </li>
-<li><p>子组件调用父组件中的方法，利用 <code>$emit()</code> 方法实现</p>
-<ol>
-<li>父组件需要将定义的方法用 <code>v-on:(自定义事件名称)</code> 传递给子组件 例如： <code>&lt;child-com @defEvent=&#39;fatherMethod&#39; /&gt;</code></li>
-<li>子组件内使用 <code>this.$emit(&#39;defEvent&#39;)</code> 触发事件</li>
-</ol>
+<li><p><code>su</code> ： 切换到某某用户模式，提示输入密码时该密码为切换后账户的密码，用法为“su 账户名称”。如果后面不加账户时系统默认为root账户，密码也为超级账户的密码。没有时间限制。</p>
 </li>
-<li><p>子组件传递数据给父组件，利用 <code>$emit()</code> 的第二个参数来传递</p>
-<ol>
-<li>利用子组件调用父组件的方法将所需要传递的数据填入 <code>$emit(&#39;defEvent&#39;,data)</code> data中，父组件中的方法定义一个形参来接收data</li>
-</ol>
-</li>
-<li><p>父组件调用子组件中的方法直接可以用 ref 属性找到子组件 直接用 . 查找触发</p>
-</li>
-</ul>
-<h2 id="关于-sync修饰符可以实现父子组件双向绑定数据"><a href="#关于-sync修饰符可以实现父子组件双向绑定数据" class="headerlink" title="关于 .sync修饰符可以实现父子组件双向绑定数据"></a>关于 .sync修饰符可以实现父子组件双向绑定数据</h2><ul>
-<li><p>.sync是一个编译时的语法糖，他会被自动扩展为一个自动更新父组件属性的v-on监听器</p>
-<p>例如： <code>&lt;child-com :foo.sync=&quot;bar&quot; /&gt;</code> 会扩展为 <code>&lt;child-com :foo=&quot;bar&quot; @update:foo=&quot;val =&gt; foo = val&quot; /&gt;</code><br>此时 child-com 组件内部显示的触发 <code>this.$emit(&#39;update:foo&#39;,newVal)</code> 就可以将 newVal 更新到父组件中的 foo 变量中</p>
+<li><p><code>sudo -i</code> : 为了频繁的执行某些只有超级用户才能执行的权限，而不用每次输入密码，可以使用该命令。提示输入密码时该密码为当前账户的密码。没有时间限制。执行该命令后提示符变为“#”而不是“$”。想退回普通账户时可以执- 行“exit”或“logout” 。</p>
 </li>
 </ul>
 
@@ -203,7 +185,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		
 		</ul>
@@ -259,7 +241,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020-03-05-vue%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020-03-27-linux%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,18 +255,9 @@
   
 <nav id="article-nav">
   
-    <a href="/blog/2020-03-05-%E9%A1%B9%E7%9B%AE%E6%A1%88%E4%BE%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          项目案例
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2020-01-16-%E8%B5%84%E6%BA%90%E6%95%B4%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">资源整合</div>
+    <a href="/blog/2020-03-26-python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&#39;python基础笔记&#39;</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -311,7 +284,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现"><span class="toc-number">1.</span> <span class="toc-text">各组件间的通信可以利用Vuex工具来满足，项目不大或者封装组件可以用原生Vue的组件通信来实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-sync修饰符可以实现父子组件双向绑定数据"><span class="toc-number">2.</span> <span class="toc-text">关于 .sync修饰符可以实现父子组件双向绑定数据</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于linux常用命令"><span class="toc-number">1.</span> <span class="toc-text">关于linux常用命令</span></a></li></ol>
                     </div>
                 </span>
             </div>

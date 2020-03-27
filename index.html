@@ -138,6 +138,300 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-linux基础笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020-03-27-linux%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/">linux基础笔记</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2020-03-27-linux%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-03-27T03:52:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="关于linux常用命令"><a href="#关于linux常用命令" class="headerlink" title="关于linux常用命令"></a>关于linux常用命令</h2><ul>
+<li><p><code>sudo</code> : 暂时切换到超级用户模式以执行超级用户权限，提示输入密码时该密码为当前用户的密码，而不是超级账户的密码。不过有时间限制，Ubuntu默认为一次时长15分钟。</p>
+</li>
+<li><p><code>su</code> ： 切换到某某用户模式，提示输入密码时该密码为切换后账户的密码，用法为“su 账户名称”。如果后面不加账户时系统默认为root账户，密码也为超级账户的密码。没有时间限制。</p>
+</li>
+<li><p><code>sudo -i</code> : 为了频繁的执行某些只有超级用户才能执行的权限，而不用每次输入密码，可以使用该命令。提示输入密码时该密码为当前账户的密码。没有时间限制。执行该命令后提示符变为“#”而不是“$”。想退回普通账户时可以执- 行“exit”或“logout” 。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020-03-27-linux%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-python基础笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020-03-26-python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/">&#39;python基础笔记&#39;</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2020-03-26-python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+  	<time datetime="2020-03-26T15:58:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>xmanage5<br>19.09.11</p>
+<p>ls  –  list  [-option]  -a (all) -l -h(human)(配合-l使用，单独使用无效) ls结合通配符* ? []<br>pwd – print work directory<br>cd – change directory<br>touch – touch<br>mkdir – make directory [-option] -p(递归创建目录)<br>rm – remove [-option] -r(递归删除) -f(强制删除，文件不存在也不提示错误)<br>clear – clear</p>
+<p>cp – copy  [-option] -i -r<br>mv – move  -i(防止不小心覆盖同名文件)     (移动到当前目录可以重命名)</p>
+<p>cat  [-option]  -b  -n<br>more  space,enter,b,f,q,/word<br>grep  [-option] -n -v -i  (可以使用正则查找)<br>echo<br>重定向 &gt;，&gt;&gt;<br>管道 |</p>
+<p>which 命令 (可以查看命令在什么位置)</p>
+<p>tree [-option] -d</p>
+<p>shutdown [-option] -r -c   shutdown -r 20:30</p>
+<p>ssh -p 22 user@remote</p>
+<p>scp -P 22 01.py user@remote:Desktop/01.py  [-option]  -r  -P<br>scp -P 22  user@remote:Desktop/01.py 01.py</p>
+<p>免密登录设置</p>
+<p>1.ssh-keygen<br>ssh-copy-id user@remote</p>
+<p>~/.ssh/config  配置别名<br>Host 远程计算机别名<br>    HostName ip地址<br>    User 用户名<br>    Port 22</p>
+<p>chmod +/-  文件名|目录名<br>chmod -R 753 文件名|目录名<br>执行格式  ./文件名</p>
+<p>su [-] （switch user）<br>sudo（切换到该用户执行一次）</p>
+<p>groupadd 组名<br>groupdel 组名</p>
+<p>chgrp -R 组名 文件/目录名</p>
+<p>cat /etc/group</p>
+<p>useradd -m -g 组 新建用户名<br>passwd 用户名<br>user -r 用户名<br>cat /etc/passwd | grep 用户名</p>
+<p>id</p>
+<p>usermod -g 组 用户名（修改主组）<br>usermod -G 组 用户名(修改附加组)</p>
+<p>who<br>whoami<br>usermod -s /bin/bash 用户名<br>witch 要查看的命令保存在哪</p>
+<p>chown [-R] 用户名 文件名|目录名<br>date<br>cal [-y] (calendar)<br>df [-h] (disk free)<br>du [-h] (disk usage)<br>ps [aux]<br>top<br>kill [-9] 进程代号</p>
+<p>find [路劲] -name “.py”</p>
+<p>ln [-s] 被链接源文件绝对路劲 链接文件</p>
+<p>tar -cvf 打包文件.tar 被打包的文件/路径<br>tar -xvf 打包好的文件.tar</p>
+<p>gzip打包方法<br>tar -zcvf 打包文件.tar.gz 被压缩的文件/路径<br>tar -zxvf 打包好的文件.tar.gz<br>tar -zxvf 打包好的文件.tar.gz -C 目标路径(指定路径解压)</p>
+<p>bzip2打包方法<br>tar -jcvf 打包文件.tar.bz2 被压缩的文件/路径<br>tar -jxvf 打包好的文件.tar.bz2</p>
+<p>apt [install,remove,upgrade] 软件名 （安装，卸载，更新）</p>
+<p>配置软件源（具体自己百度）</p>
+<hr>
+<p>python开始</p>
+<p>执行python的三种方式<br>  1.解释器 – python/python3<br>  2.交互式–ipython/ipython3<br>  3.集成开发环境–PyCharm</p>
+<p>强大的ipython交互式解释器()</p>
+<p>PyCharm(python IDE)</p>
+<h2 id="语法开始"><a href="#语法开始" class="headerlink" title="语法开始"></a>语法开始</h2><p>命名文件建议只用小写字母，数字和下划线</p>
+<ul>
+<li>, - , * , / , % , // , **</li>
+</ul>
+<p>变量的定义</p>
+<p>变量名 = 值 （每个变量在使用前必须赋值，变量赋值以后该变量才会被创建）</p>
+<p>数据类型（数字型，非数字型）</p>
+<p>数字型<br>  整型 int  python2.x分为（int,long）<br>  浮点型 float<br>  布尔型 bool (参与运算就是 0 或者 1 )<br>    真 True 非0数 – 非零即真<br>    假 False 0<br>  复数型 complex<br>    主要用于科学计算</p>
+<p>非数字型<br>  字符串<br>  列表<br>  元组<br>  字典</p>
+<p>可以用 type(variate) 检测数据类型</p>
+<p>input()函数的用法<br>password = input(“请输入密码”)  (都是str类型)</p>
+<p>类型转换函数<br>  int(x) 将x转换为一个整数<br>  float(x) 将x转换为一个小数</p>
+<p>变量格式化输出<br>  %s 字符串<br>  %d 有符号十进制整数，%06d表示输出的整数显示位数，不足6位的用0补全<br>  %f 浮点数，%.02f表示小数点后只显示两位<br>  %% 输出%<br>语法<br>  print(“格式化字符串” % 变量1)<br>  print(“格式化字符串” % (变量1,变量2，变量3))</p>
+<p>查看python中的关键字<br>  import keyword<br>  print(keyword.kwlist)</p>
+<p>如果不希望print换行 则可以写成  print(“*”,end=””)  python3.x才有效</p>
+<p>比较运算符和js一样，2.x中不等于还可以用 &lt;&gt; 来表示</p>
+<p>判断语句</p>
+<p>if 条件:<br>    表达式<br>else:<br>    表达式</p>
+<p>if 条件:<br>    表达式<br>elif 条件:<br>    表达式<br>else:<br>    表达式</p>
+<p>判断嵌套<br>if 条件:<br>    if 条件:<br>        表达式<br>    else:<br>        表达式<br>else:<br>    表达式</p>
+<p>逻辑运算符<br>  与and/或or/非not<br>  条件1 and 条件2<br>  条件1or 条件2<br>  not 条件</p>
+<p>查看引入包所提供的方法<br>import random<br>random. + tab键</p>
+<p>循环语句</p>
+<p>i = 0<br>while i&lt;5:<br>    i = i+1<br>循环嵌套<br>i=0<br>j=0<br>while i&lt;5:<br>    while j&lt;4:<br>        j+=1<br>    i+=1</p>
+<p>函数的定义</p>
+<p>def 函数名():<br>    函数封装的代码</p>
+<p>给函数添加文档注释<br>‘’’文档注释’’’       pycharm在函数调用的位置CTRL+Q 可以快速查看</p>
+<p>模块<br>  模块可以用import导入<br>  每个.py的python源文件都是一个模块<br>  在模块中定义的全局变量，函数都是模块能提供给外界直接使用的工具</p>
+<p>列表（List） 类似 数组 用  [ ] 定义<br>  mylist = [“zhangsan”,”lisi”,”wangwu”]<br>  mylist.sort()  升序排序<br>  mylist.sort(reverse=True)  降序排序<br>  mylist.reverse()  反转    </p>
+<p>元组（Tuple）与列表类似，但是元组的元素不能修改  用( ) 定义</p>
+<p>元组 -&gt; 列表  list(tuple)<br>列表 -&gt; 元组 tuple(list)</p>
+<p>字典 是无序的数据集合，使用print函数输出字典时输出顺序和定义顺序不一致 (dictionary) 用 { } 定义<br>  字典.keys() 所有key列表<br>  字典.values()所有value列表<br>  字典.items()所有(key,value)元组列表<br>取值<br>  字典[‘键名’]<br>增加/修改<br>  字典[‘键名’] = 值<br>删除<br>  字典.pop(‘键名’)</p>
+<p>string.isspace() 也能检测 \t,\n,\r<br>string.isdecimal() [比较常用，判断单纯数字]<br>string.isdigit()<br>string.isnumeric()</p>
+<p>string.startswith(str)  以str开头则返回True<br>string.endswith(str)<br>string.find(str) 返回索引位置<br>string.replace(str1,str2)  str1替换成str2  执行完返回新的字符串，不会修改原字符串</p>
+<p>string.center(10,” “)<br>string.ljust(10)<br>string.rjust(10)</p>
+<p>string.lstrip()<br>string.rstrip()<br>string.strip()</p>
+<p>string.split(str=””,num)<br>string.join(序列)  “ “.join(list)  使用” “空格作为分隔符          293集</p>
+<p>字符串切片<br>string[开始索引:结束索引:步长]<br>列表，元组都支持切片</p>
+<p>公共方法<br>  len()<br>  del()<br>  max()<br>  min()<br>  com(item1,item2)  python3.x取消了</p>
+<p>成员操作符   in<br>1 in [0,1,2]  True<br>1 not in [0,1,2] False</p>
+<p>for循环</p>
+<p>  for 变量 in 集合:<br>      循环体<br>  else:<br>      没有通过break退出循环，循环结束后，会执行的代码</p>
+<p>如果在开发程序时，不需要先编写分支内部的代码 可以用 pass占位<br>if 条件:<br>  pass<br>else:<br>  pass</p>
+<p>shebang<br>#! /usr/bin/python3</p>
+<p>id() 查看变量在内存中的地址</p>
+<p>可变类型和不可变类型<br>  不可变类型：<br>    1.数字类型 int,bool,float,complex,long(2.x)<br>    2.字符串 str<br>    3.元组 tuple<br>  可变类型<br>    1.列表 list<br>    2.字典 dict</p>
+<p>python 在函数内部使用赋值语句是不允许直接修改全局变量的，只会在函数内部定义一个局部变量（如果需要修改全局变量，需要使用global关键字声明就可以）<br>例子:<br>num = 10<br>def demo():<br>  golbal num<br>  num = 3</p>
+<h1 id="此时-num的只为3"><a href="#此时-num的只为3" class="headerlink" title="此时 num的只为3"></a>此时 num的只为3</h1><p>开发中代码顺序</p>
+<pre><code>shebang
+import模块
+全局变量
+函数定义
+执行代码</code></pre><p>函数返回多个数据可以返回一个元组，此时小括号可以省略， return a,b     # 返回结果是(a,b)</p>
+<p>可以定义多个变量一次接受函数返回的元组   gl_a,gl_b = return a,b     需要个数顺序一致</p>
+<p>交换 a,b的值      a,b = b,a</p>
+<p>函数传入的参数如果是可变类型，使用方法修改变量内容会影响到外部变量</p>
+<p>列表变量使用+=实际是调用列表的extend()方法</p>
+<p>函数参数有默认值的应该放在参数的末尾</p>
+<p>定义接收多值参数<br>  参数名前增加一个 * 可以接收元组  <em>args<br>  参数名前增加两个个 * 可以接收字典  *</em>kwargs<br>元组，字典的拆包  在变量之前分别加 * ， **</p>
+<p>递归<br>  函数自己调用自己，针对参数满足某个条件时跳出函数（递归的出口）</p>
+<hr>
+<p>python 面向对象</p>
+<p>内置函数  dir()  可以查看传入参数的内置方法</p>
+<p>定义类<br>  class 类名:                              注意类要用大驼峰命名<br>      def 方法1(self,参数列表):<br>          pass<br>      def 方法2(self,参数列表):<br>          pass</p>
+<p>创建类   对象变量 = 类名()</p>
+<p>类的初始化方法 <strong>init</strong>()   在类创建对象的时候会自动执行<strong>init</strong>()</p>
+<p>类初始化属性<br>class cat:<br>    def <strong>init</strong>(self):<br>        self.name =”tom”</p>
+<p>如果定义属性的时候不确定要定义什么值，可以先用 None占位</p>
+<p>身份运算符 is , is not<br>x is y  判断s和y内存地址是否相等</p>
+<p>定义私有属性，私有方法，可以再定义的时候前面添加两个下划线 “<strong>“  此时只能在类里访问，在外面访问不到，在子类中也访问不到父类的隐私<br>在Python中没有真正的私有的 可以通过 (_类名</strong>私有) 可以访问得到，但是不建议在外界访问</p>
+<p>继承的语法<br>class 类名(父类名):<br>    pass</p>
+<p>对父类的方法进行扩展可以使用  super().父类方法  来调用父类的方法 python2.x不支持<br>2.x 支持 ：父类名.方法(self)</p>
+<p>多继承可以查看 <strong>mro</strong>来看继承顺序</p>
+<p>类方法的语法<br>@classmethod<br>def 类方法名(cls):<br>    pass</p>
+<p>类的静态方法<br>@staticmethod<br>def 类的方法名():<br>    pass</p>
+<p>单例设计模式  <strong>new</strong>(cls)   这个object基类提供的内置方法<br>class test(object):<br>    instant = None<br>    def <strong>new</strong>(cls, <em>args, *</em>kwargs):<br>        if cls.instant is None:<br>            cls.instant = super().<strong>new</strong>(cls)<br>        return cls.instant</p>
+<pre><code>def __init__(self):
+    print(&quot;我是初始化方法&quot;)</code></pre><p>try:<br>    pass<br>except 错误类型:<br>    pass</p>
+<p>(错误类型是跑出异常的第一个单词)</p>
+<p>捕获未知错误<br>except Exception as result:<br>    print(“未知错误%s” % result)</p>
+<p>异常捕获的完整语法</p>
+<p>try:<br>    #尝试执行的代码<br>    pass<br>except 错误类型1:<br>    #针对错误类型1执行的代码<br>   pass<br>except (错误类型2，错误类型3):<br>   #针对错误类型2,3执行的代码<br>    pass<br>except Exception as result:<br>    print(“错误类型%s” % result)<br>else:<br>    #没有异常才会执行的代码<br>    pass<br>finally:<br>    #无论是否有异常，都会执行的代码<br>    pass </p>
+<p>主动抛出异常<br>ex = Exception(“密码长度不够”)<br>raise ex</p>
+<p>给模块起个别名<br>import 模块名 as 模块别名</p>
+<p>导入所有工具<br>from 模块 import *<br>(不推荐，容易覆盖同名函数) </p>
+<p><strong>file</strong> 这是模块的内置属性，可以查看模块的完整路径</p>
+<p>原则–每个py文件都是可以被导入的<br>导入模块时文件中没有任何缩进的代码都会被执行一遍</p>
+<p><strong>name</strong> 的用法  <strong>name</strong>在当前文件执行保存的是”<strong>main</strong>“ 在导入模块的地方则输出当前模块名</p>
+<p>if <strong>name</strong> == “<strong>main</strong>“:<br>    main()</p>
+<p>可以再main函数中编写测试代码</p>
+<p>封装模块，新建包，包目录下必须要有<strong>init</strong>.py文件<br>可以在<strong>init</strong>.py中通过 from . import 希望外界能使用的模块名   可以暴露出去</p>
+<p>发布模块<br>1.<br>from distutils.core import setup</p>
+<p>setup(name=”#包名”,version=”1.0 #版本号”，description=”#描述信息”,long_description=”#完整描述信息”,author=”#作者”,author_email=”#作者邮箱”,url=”#个人主页”,py_modules=[“modu_1”,”modu_2”])</p>
+<p>2.在终端用python解释器执行setup.py<br>python3 setup.py build</p>
+<p>3生成发布压缩包<br>python3 setup.py sdist</p>
+<p>压缩包解压<br>package.tar.gz<br>tar zxvf package.tar.gz<br>sudo python3 setup.py install</p>
+<p>安装完毕 </p>
+<p>如果要卸载，找到安装好的包的位置删掉即可</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2020-03-26-python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于Promise" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -509,6 +803,9 @@
 <p><a href="https://risingstars.js.org/2019/zh/#section-all" target="_blank" rel="noopener">javascript明星项目</a></p>
 <p><a href="https://ts.xcatliu.com/" target="_blank" rel="noopener">TypeScript入门学习资源</a></p>
 <p><a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html" target="_blank" rel="noopener">npm script使用指南</a></p>
+<h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">关于flex布局</a></p>
+<p><a href="http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html" target="_blank" rel="noopener">关于grid布局</a></p>
+<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2><p><a href="https://www.cnblogs.com/pxuan/p/11023089.html" target="_blank" rel="noopener">不挂起启动进程服务</a></p>
 <h2 id="nodejs"><a href="#nodejs" class="headerlink" title="nodejs"></a>nodejs</h2><p><a href="http://nodejs.cn/" target="_blank" rel="noopener">nodejs中文文档</a></p>
 <h2 id="关于科学上网的方法"><a href="#关于科学上网的方法" class="headerlink" title="关于科学上网的方法"></a>关于科学上网的方法</h2><ol>
 <li><p>谷歌浏览器插件 <strong>Astar VPN</strong>  <a href="https://chrome.google.com/webstore/search/astart%20vpn" target="_blank" rel="noopener">Astart VPN</a></p>
@@ -887,460 +1184,6 @@
 
 
   
-    <article id="post-es6面向对象回顾" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019-12-06-es6%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9B%9E%E9%A1%BE/">es6面向对象回顾</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2019-12-06-es6%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9B%9E%E9%A1%BE/" class="archive-article-date">
-  	<time datetime="2019-12-06T04:39:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="class关键字"><a href="#class关键字" class="headerlink" title="class关键字"></a>class关键字</h2><p>class关键字可以声明一个对象，比如定义一个车对象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Car &#123;</span><br><span class="line">  //...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="constructor函数"><a href="#constructor函数" class="headerlink" title="constructor函数"></a>constructor函数</h2><p>constructor函数，在对象执行new操作符的时候回被执行，可以接受执行new操作的时候传入对象的参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Car&#123;</span><br><span class="line">  constructor(x)&#123;</span><br><span class="line">    //Car被new的时候，我就会执行</span><br><span class="line">    console.log(x)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">new Car(&apos;我是从外面传进来的&apos;) // -&gt; 我是从外面传进来的</span><br></pre></td></tr></table></figure>
-
-<h2 id="类继承extends和super关键字"><a href="#类继承extends和super关键字" class="headerlink" title="类继承extends和super关键字"></a>类继承extends和super关键字</h2><ul>
-<li><p>Son继承了Father的money方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Father&#123;</span><br><span class="line">  constructor()&#123;&#125;</span><br><span class="line">  money()&#123;</span><br><span class="line">    console.log(&apos;100块&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son extends Father&#123;</span><br><span class="line">  constructor()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>子类向父类传递参数 super</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Father&#123;</span><br><span class="line">  constructor(x,y)&#123;</span><br><span class="line">    this.x = x;</span><br><span class="line">    this.y = y;</span><br><span class="line">  &#125;</span><br><span class="line">  add()&#123;</span><br><span class="line">    console.log(this.x + this.y)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Son extends Father&#123;</span><br><span class="line">  constructor(x,y)&#123;</span><br><span class="line">    super(x,y); // super必须放在constructor的最前面</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">new Son(1,2).add() // -&gt; 3</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>super也可以调用父类中的普通函数 super.FatherMethodName()</p>
-</li>
-<li><p>es6 类是不会变量提升的，必须先定义后使用</p>
-</li>
-<li><p>this的指向问题，方法里的this总是指向这个方法的调用者</p>
-</li>
-<li><p>insertAdjacentHTML(position,html)方法的使用 第一个参数是插入的位置，第二个是插入的HTML字符串</p>
-<ul>
-<li>‘beforebegin’ 元素自身的前面</li>
-<li>‘afterbegin’ 插入元素内部的第一个子节点之前</li>
-<li>‘beforeend’ 插入元素内部的最后一个子节点之后</li>
-<li>‘afterend’ 元素自身的后面</li>
-<li>appendChild不支持追加字符串的子元素，insertAdjacentHTML支持追加字符串的元素</li>
-</ul>
-</li>
-<li><p>实例成员和静态成员的区别</p>
-<ul>
-<li>实例成员就是构造函数内部通过this添加的成员，只能通过实例来访问</li>
-<li>静态成员是直接添加在构造函数本身的成员，只能通过构造函数本身访问</li>
-</ul>
-</li>
-</ul>
-<h2 id="ES5-存在的问题"><a href="#ES5-存在的问题" class="headerlink" title="ES5 存在的问题"></a>ES5 存在的问题</h2><ul>
-<li><p>构造函数的问题，会存在浪费内存的问题<br><img src="../images/1577088520.jpg" alt="说明图"></p>
-</li>
-<li><p>每个函数都有一个prototype原型对象，可以把构造函数的公共方法放到prototype原型对象上，这样所有的实例都能共享到这个方法，也不存在内存浪费的问题</p>
-</li>
-<li><p>一般情况，吧公共属性定义到构造函数里面，公共方法放到原型对象身上</p>
-</li>
-<li><p>构造函数，实例，原型对象三者之间的关系<br><img src="../images/1577090267.jpg" alt="关系图"></p>
-</li>
-<li><p>原型链的关系实现继承<br><img src="../images/1577091097.jpg" alt="原型链关系图"></p>
-</li>
-</ul>
-<h2 id="ES5的继承"><a href="#ES5的继承" class="headerlink" title="ES5的继承"></a>ES5的继承</h2><ul>
-<li>call方法 传参是一个一个传，会立刻执行调用该方法的函数</li>
-<li>apply方法 用法和call一样传参方式不同而已，传参是放在数组里直接传的</li>
-<li>bind方法 改变调用该方法的函数的作用域，不会立刻执行函数，返回改变作用域后的函数<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function test()&#123;</span><br><span class="line">  console.log(&apos;我是测试函数&apos;)</span><br><span class="line">  console.log(this)</span><br><span class="line">&#125;</span><br><span class="line">var o = &#123;</span><br><span class="line">  name: &apos;我是o对象&apos;</span><br><span class="line">&#125;</span><br><span class="line">test.call(); // -&gt; window</span><br><span class="line">test.call(o); // -&gt; o对象</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function Father(uname,age)&#123;</span><br><span class="line">  this.uname = uname;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line">Father.prototype.money = function()&#123;</span><br><span class="line">  console.log(&apos;i have 100$&apos;)</span><br><span class="line">&#125;</span><br><span class="line">function Son(uname,age,score)&#123;</span><br><span class="line">  // 实现继承Father构造函数的属性</span><br><span class="line">  Father.call(this,uname,age);</span><br><span class="line">  this.score = score;</span><br><span class="line">&#125;</span><br><span class="line">var son = new Son(&apos;张三&apos;,18,99)</span><br><span class="line">consnole.log(son)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//apply的应用</span><br><span class="line">var arr = [1,33,45,6,77]</span><br><span class="line">Math.max.apply(Math,arr);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="ES5之前的方法"><a href="#ES5之前的方法" class="headerlink" title="ES5之前的方法"></a>ES5之前的方法</h2><ul>
-<li><p>数组的方法</p>
-<ul>
-<li>forEach() 该方法没有返回值，只会对调用该方法的数组里的每一项执行一次给定的函数，可以使用return跳过当前一次循环<ul>
-<li>Array.forEach((currentItem,index,arr)=&gt;{}) currentItem（当前值） index（索引）  arr（原数组）</li>
-</ul>
-</li>
-<li>map()  该方法会返回一个和调用该方法长度一致的数组<ul>
-<li>Array.map((currentItem,index,arr)=&gt;{return currentItem})</li>
-</ul>
-</li>
-<li>filter()  该方法会返回一个数组<ul>
-<li>filter(item =&gt; {return item &gt; 2})  会筛选出所有大于2的数组项组成的数组</li>
-</ul>
-</li>
-<li>some()  该方法会返回一个布尔值，调用该方法的数组有一项符合给定条件，将会立刻停止遍历返回结果true</li>
-<li>every()  该方法会返回一个布尔值，调用该方法的数组有一项不符合给定条件，将会立刻停止遍历返回结果false</li>
-</ul>
-</li>
-<li><p>字符串的方法</p>
-<ul>
-<li>trim() 不影响字符串本身，返回新的字符串</li>
-</ul>
-</li>
-<li><p>对象方法</p>
-<ul>
-<li>Object.defineProperty(obj,prop,descriptor) descriptor是以对象形式{}书写的 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(obj,prop,&#123;</span><br><span class="line">  value: &apos;&apos;,//设置属性的值</span><br><span class="line">  writable: boolean,//属性值是否可以被修改</span><br><span class="line">  enumerable: boolean,//目标属性是否可以被枚举</span><br><span class="line">  configurable: boolean,//目标属性是否可以被删除或者是否可以再次修改特性</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><ul>
-<li>高阶函数是对其他函数进行操作的函数，<strong>它接收函数作为参数</strong>或<strong>将函数作为返回值输出</strong></li>
-</ul>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p><strong>闭包</strong>指有权访问另一个函数作用域中<strong>变量</strong>的<strong>函数</strong>  —JavaScript高级程序设计</p>
-<p>简单理解就是，一个作用域可以访问另外一个函数内部的局部变量，这个局部变量所在的函数就是闭包函数</p>
-<p>闭包可以延伸变量的作用域范围，滥用闭包会造成性能问题（内存泄漏）</p>
-<ul>
-<li>变量<ul>
-<li>变量根据作用域的不同分为两种：全局变量和局部变量<ol>
-<li>函数内部可以使用全局变量</li>
-<li>函数外部不可以使用局部变量</li>
-<li>当函数执行完毕，本作用域内的局部变量会被销毁</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>正则表达式的方法 <code>test()</code> 可以用来检测字符串是否符合正则表达式要求的规范</p>
-<ul>
-<li>边界符 ^:开始、$:结束</li>
-<li>字符类 [] 中括号里面的字符可供选择，只匹配一个 例如： <code>[abc]</code> 只匹配a或者b或者c, <code>[a-z0-9]</code>匹配abc…z和0…9里的任意一个字符 </li>
-<li>量词 </li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">量词</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">*</td>
-<td align="center">重复 0-多</td>
-</tr>
-<tr>
-<td align="center">+</td>
-<td align="center">重复 1-多</td>
-</tr>
-<tr>
-<td align="center">?</td>
-<td align="center">重复 0-1</td>
-</tr>
-<tr>
-<td align="center">{n}</td>
-<td align="center">重复n次</td>
-</tr>
-<tr>
-<td align="center">{n,}</td>
-<td align="center">重复n-多</td>
-</tr>
-<tr>
-<td align="center">{n,m}</td>
-<td align="center">重复n-m次</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p>量词结合[]设定某个模式出现的次数</p>
-</li>
-<li><p>预定类</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">预定类</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">\d</td>
-<td align="center">[0-9]</td>
-</tr>
-<tr>
-<td align="center">\D</td>
-<td align="center">[^0-9]</td>
-</tr>
-<tr>
-<td align="center">\w</td>
-<td align="center">[A-Za-z0-9]</td>
-</tr>
-<tr>
-<td align="center">\W</td>
-<td align="center">[^A-Za-z0-9]</td>
-</tr>
-<tr>
-<td align="center">\s</td>
-<td align="center">匹配空格[\t\r\n\v\f]</td>
-</tr>
-<tr>
-<td align="center">\S</td>
-<td align="center">匹配非空[^\t\r\n\v\f]</td>
-</tr>
-</tbody></table>
-<h2 id="set数据结构"><a href="#set数据结构" class="headerlink" title="set数据结构"></a>set数据结构</h2><ul>
-<li>Set数据结构会自动去除重复数据 实例方法有add(value)添加某个值返回Set结构本身、delete(value) 删除某个值，返回一个布尔值，表示删除是否成功、has(value)返回一个布尔值，表示该值是否为Set的成员、clear()清除所有成员没有返回值</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">es6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2019-12-06-es6%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9B%9E%E9%A1%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vuex的简单理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019-12-04-vuex%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">vuex的简单理解</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2019-12-04-vuex%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2019-12-04T02:45:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是Vuex"><a href="#什么是Vuex" class="headerlink" title="什么是Vuex"></a>什么是Vuex</h2><p>根据官方的解释vuex是一个专门为Vue.js应用程序开发的<strong>状态管理模式</strong><br>可以理解为一个全局的data</p>
-<h2 id="什么是状态管理模式"><a href="#什么是状态管理模式" class="headerlink" title="什么是状态管理模式"></a>什么是<strong>状态管理模式</strong></h2><p><strong>状态管理应用包含：</strong></p>
-<ul>
-<li>state,存储应用的数据源；</li>
-<li>view, 用声明的方式将state的数据映射到视图上；</li>
-<li>actions,响应View上用户操作导致的state的变化；</li>
-</ul>
-<img src="https://vuex.vuejs.org/flow.png" width="500" />
-
-<img src="https://vuex.vuejs.org/vuex.png" width="500" />
-
-<h2 id="简单的一个store例子"><a href="#简单的一个store例子" class="headerlink" title="简单的一个store例子"></a>简单的一个store例子</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    increment(state)&#123;</span><br><span class="line">      state.count++</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>定义完store可以利用store.commit来调用mutations里定义的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">store.commit(&apos;increment&apos;)</span><br><span class="line">console.log(store.state.count) // -&gt; 1</span><br></pre></td></tr></table></figure>
-<hr>
-<p><strong>想改变state必须通过提交mutations，这样才能被dev tools检测到改变</strong></p>
-<h2 id="state"><a href="#state" class="headerlink" title="state"></a>state</h2><p>注册好store之后，在vue组件中可以通过<code>this.$store</code>获取store对象<br>可以将<code>state</code>中需要用到的数据映射到<code>computed</code>中使用</p>
-<ul>
-<li>还可以通过<code>mapState</code>这个辅助函数来便捷的批量映射<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapState &#125; from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  // ...</span><br><span class="line">  computed: mapState(&#123;</span><br><span class="line">    // 箭头函数可使代码更简练</span><br><span class="line">    count: state =&gt; state.count,</span><br><span class="line"></span><br><span class="line">    // 传字符串参数 &apos;count&apos; 等同于 `state =&gt; state.count`</span><br><span class="line">    countAlias: &apos;count&apos;,</span><br><span class="line"></span><br><span class="line">    // 为了能够使用 `this` 获取局部状态，必须使用常规函数</span><br><span class="line">    countPlusLocalState (state) &#123;</span><br><span class="line">      return state.count + this.localCount</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>当映射的计算属性的名称与 state 的子节点名称相同时，我们也可以给 mapState 传一个字符串数组。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">computed: mapState([</span><br><span class="line">  // 映射 this.count 为 store.state.count</span><br><span class="line">  &apos;count&apos;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>使用es6对象展开</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  localComputed () &#123; /* ... */ &#125;,</span><br><span class="line">  // 使用对象展开运算符将此对象混入到外部对象中</span><br><span class="line">  ...mapState(&#123;</span><br><span class="line">    // ...</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="getters"><a href="#getters" class="headerlink" title="getters"></a>getters</h2><ul>
-<li><p>vuex允许在store中定义”getter” (相当于store中的计算属性一样)。像vue中的computer属性一样，getter的返回值会根据他的一来被缓存起来，只有当依赖发生改变的时候才会被重新计算。</p>
-</li>
-<li><p><strong>getter接收<code>state</code>作为第一个参数</strong></p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: 1</span><br><span class="line">  &#125;,</span><br><span class="line">  getters: &#123;</span><br><span class="line">    elseGetters: state =&gt; &#123;</span><br><span class="line">      //...</span><br><span class="line">    &#125;,</span><br><span class="line">    calculation: state =&gt; &#123;</span><br><span class="line">      return state.count+1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>通过属性访问getter</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">store.getters.count // -&gt; 2</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>getter也可以接收整个 <code>getters</code> 对象作为第二个参数</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getters:&#123;</span><br><span class="line">  test: (state,getters) =&gt; &#123;</span><br><span class="line">    return getters.elseGetters</span><br><span class="line">  &#125;</span><br><span class="line">&#125;  // -&gt; 此时的test属性会返回其他getters的值</span><br></pre></td></tr></table></figure>
-
-<h2 id="mutations"><a href="#mutations" class="headerlink" title="mutations"></a>mutations</h2><p>更改vuex的store中的state中的状态唯一合法方法就是提交mutation，vuex中的mutation类似于事件，每个mutation都有一个字符串的<strong>事件类型（type）</strong>和一个<strong>回调函数（handler）</strong> <strong><em>回调函数会接收state作为第一个参数</em></strong></p>
-<ul>
-<li><p>mutation需要用commit的方法去调用</p>
-</li>
-<li><p>mutation的commit可以传入额外的参数给mutation接收，即是mutation的<strong>载荷（payload）</strong></p>
-</li>
-<li><p>正常风格的提交mutation</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">  type1(state,payload)&#123;</span><br><span class="line">    state.count += payload.amount</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">---</span><br><span class="line">store.commit(&apos;type1&apos;,&#123;</span><br><span class="line">  amount: 1</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
-<li><p>对象风格的提交mutation的方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">store.commit(&#123;</span><br><span class="line">  type: &apos;type1&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可以使用常量替代mutation的事件类型（使用字符串出错不会报错，使用常量拼写错误会报错，方便排错改正）</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// mutation-types.js</span><br><span class="line">export const SOME_MUTATION = &apos;SOME_MUTATION&apos;</span><br><span class="line"></span><br><span class="line">// store.js</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line">import &#123; SOME_MUTATION &#125; from &apos;./mutation-types&apos;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    // 我们可以使用 ES2015 风格的计算属性命名功能来使用一个常量作为函数名</span><br><span class="line">    [SOME_MUTATION] (state) &#123;</span><br><span class="line">      // mutate state</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>重要原则 mutation 必须是同步函数,devtool才能准确追踪改变</li>
-</ul>
-<h2 id="actions"><a href="#actions" class="headerlink" title="actions"></a>actions</h2><p>actions里的函数接收的一个与store实力具有相同方法和属性的context对象，因此可以调用context.commit来提交一个mutation，或者调用context.state和context.getters来获取state和getters</p>
-<p>action类似于mutation，不同的是：</p>
-<ul>
-<li><p>action提交的是mutation去改变state，而不是本身直接去操作state</p>
-</li>
-<li><p>action可以包含任意的异步操作</p>
-</li>
-<li><p>action是通过<code>store.dispatch</code>方法来触发的</p>
-</li>
-<li><p>action也同样支持一载荷（payload）方式和对象方式进行分发</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">actions:&#123;</span><br><span class="line">  typeAsync(&#123;commit&#125;,payload)&#123;</span><br><span class="line">    setTimeout(()=&gt;&#123;</span><br><span class="line">      commit(&apos;type&apos;)</span><br><span class="line">      console.log(payload)</span><br><span class="line">    &#125;,1000)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//以载荷形式分发</span><br><span class="line">store.dispatch(&apos;typeAsync&apos;,&#123;</span><br><span class="line">  amount: 10</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//以对象形式分发</span><br><span class="line">store.dispatch(&#123;</span><br><span class="line">  type: &apos;typeAsync&apos;,</span><br><span class="line">  amount: 10</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>action涉及到<strong>调用异步api</strong>和<strong>分发多重mutation</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// import * as types from &apos;types.js&apos;</span><br><span class="line">actions:&#123;</span><br><span class="line">  chechout(&#123;commit,state&#125;,payload)&#123;</span><br><span class="line">    commit(types.CONSTANT_TYPE)</span><br><span class="line">    // API 接受一个成功回调和一个失败回调</span><br><span class="line">    api.apiName(</span><br><span class="line">      payload,</span><br><span class="line">      ()=&gt;commit(types.SUCCES),</span><br><span class="line">      ()=&gt;commit(types.FAILURE)</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在组件中可以使用<code>this.$store.dispatch(&#39;action_type&#39;)</code>分发action,或者使用mapActions辅助函数将组件的methods映射为store.dispatch调用</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapActions &#125; from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  ...mapActions([</span><br><span class="line">    &apos;action_type1&apos;,// 将 `this.action_type1(payload)`映射为`this.$store.dispatch(&apos;action_type1&apos;,payload)`</span><br><span class="line">  ]),</span><br><span class="line">  ...mapActions(&#123;</span><br><span class="line">    add: &apos;action_type1&apos; //将`this.add()`映射为`this.$store.dispatch(&apos;action_type1&apos;)`</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>action通常是异步的，那么如何知道action什么时候结束呢？</strong></p>
-</li>
-<li><p><strong><em><code>store.dispatch</code>可以处理触发action的处理函数返回的Promise，并且<code>store.dispatch</code>仍旧返回的还是Promise</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">actions:&#123;</span><br><span class="line">  actionA(&#123; commit &#125;)&#123;</span><br><span class="line">    return new Promise((resolve,reject) =&gt; &#123;</span><br><span class="line">      setTimeout(()=&gt;&#123;</span><br><span class="line">        commit(&apos;someMutation&apos;)</span><br><span class="line">        resolve()</span><br><span class="line">      &#125;,1000)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">store.dispatch(&apos;actionA&apos;).then(()=&gt;&#123;</span><br><span class="line">  //...</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 也可以在其他的action中处理</span><br><span class="line"></span><br><span class="line">actions: &#123;</span><br><span class="line">  actionB(&#123; dispatch,commit &#125;)&#123;</span><br><span class="line">    return dispatch(&apos;actionA&apos;).then(() =&gt; &#123;</span><br><span class="line">      commit(&apos;elseMutation&apos;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>结合<a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="noopener">async/await</a>组合action</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 假设 getData() 和 getOtherData() 返回的是 Promise</span><br><span class="line">actions: &#123;</span><br><span class="line">  async actionA(&#123; commit &#125;)&#123;</span><br><span class="line">    commit(&apos;MUTATION_TYPE&apos;,await getData())</span><br><span class="line">  &#125;,</span><br><span class="line">  async actionB(&#123; dispatch,commit &#125;)&#123;</span><br><span class="line">    await dispatch(&apos;actionA&apos;) // 等待actionA执行完成</span><br><span class="line">    commit(&apos;MUTATION_TYPE1&apos;,await getOtherData())</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h2><p>vuex 允许对store分割成模块（module）。每个模块拥有自己的state,mutation,action,getter</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123;...&#125;,</span><br><span class="line">  mutations: &#123;...&#125;,</span><br><span class="line">  actions: &#123;...&#125;,</span><br><span class="line">  getters: &#123;...&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const moduleB = &#123;</span><br><span class="line">  state: &#123;...&#125;,</span><br><span class="line">  mutations: &#123;...&#125;,</span><br><span class="line">  actions: &#123;...&#125;,</span><br><span class="line">  getters: &#123;...&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">store.state.a // -&gt; moduleA 中的 state</span><br><span class="line">store.state.b // -&gt; moduleB 中的 state</span><br></pre></td></tr></table></figure>
-
-<h2 id="模块的局部状态"><a href="#模块的局部状态" class="headerlink" title="模块的局部状态"></a>模块的局部状态</h2><p>对于模块内部的mutation和getter,接收的第一个参数是模块的局部状态对象</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    count: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    TYPE(state)&#123;</span><br><span class="line">      // 这里的state对象是模块的局部状态</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  getters: &#123;</span><br><span class="line">    getterName(state)&#123;</span><br><span class="line">      // 这里的state对象是模块的局部状态</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="关于命名空间-namespaced-true-false"><a href="#关于命名空间-namespaced-true-false" class="headerlink" title="关于命名空间 namespaced: true/false"></a>关于命名空间 namespaced: true/false</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在全局命名空间的,如果希望你的模块具有更高的封装度和复用性，可以通过添加 namespaced: true 的方式使其成为带命名空间的模块。当模块被注册后，它的所有 getter、action 及 mutation 都会自动根据模块注册的路径调整命名。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    account: &#123;</span><br><span class="line">      namespaced: true,</span><br><span class="line"></span><br><span class="line">      // 模块内容（module assets）</span><br><span class="line">      state: &#123; ... &#125;, // 模块内的状态已经是嵌套的了，使用 `namespaced` 属性不会对其产生影响</span><br><span class="line">      getters: &#123;</span><br><span class="line">        isAdmin () &#123; ... &#125; // -&gt; getters[&apos;account/isAdmin&apos;]</span><br><span class="line">      &#125;,</span><br><span class="line">      actions: &#123;</span><br><span class="line">        login () &#123; ... &#125; // -&gt; dispatch(&apos;account/login&apos;)</span><br><span class="line">      &#125;,</span><br><span class="line">      mutations: &#123;</span><br><span class="line">        login () &#123; ... &#125; // -&gt; commit(&apos;account/login&apos;)</span><br><span class="line">      &#125;,</span><br><span class="line"></span><br><span class="line">      // 嵌套模块</span><br><span class="line">      modules: &#123;</span><br><span class="line">        // 继承父模块的命名空间</span><br><span class="line">        myPage: &#123;</span><br><span class="line">          state: &#123; ... &#125;,</span><br><span class="line">          getters: &#123;</span><br><span class="line">            profile () &#123; ... &#125; // -&gt; getters[&apos;account/profile&apos;]</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        // 进一步嵌套命名空间</span><br><span class="line">        posts: &#123;</span><br><span class="line">          namespaced: true,</span><br><span class="line"></span><br><span class="line">          state: &#123; ... &#125;,</span><br><span class="line">          getters: &#123;</span><br><span class="line">            popular () &#123; ... &#125; // -&gt; getters[&apos;account/posts/popular&apos;]</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>启用了命名空间的 getter 和 action 会收到局部化的 getter，dispatch 和 commit,在使用模块内容（module assets）时不需要在同一模块内额外添加空间名前缀。更改 namespaced 属性后不需要修改模块内的代码</p>
-<h2 id="在带命名空间的模块内访问全局内容（Global-Assets）"><a href="#在带命名空间的模块内访问全局内容（Global-Assets）" class="headerlink" title="在带命名空间的模块内访问全局内容（Global Assets）"></a>在带命名空间的模块内访问全局内容（Global Assets）</h2><p>使用全局 state 和 getter，rootState 和 rootGetters 会作为第三和第四参数传入 getter，也会通过 context 对象的属性传入 action。</p>
-<p>若需要在全局命名空间内分发 action 或提交 mutation，将 { root: true } 作为第三参数传给 dispatch 或 commit 即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">modules: &#123;</span><br><span class="line">  foo: &#123;</span><br><span class="line">    namespaced: true,</span><br><span class="line"></span><br><span class="line">    getters: &#123;</span><br><span class="line">      // 在这个模块的 getter 中，`getters` 被局部化了</span><br><span class="line">      // 你可以使用 getter 的第四个参数来调用 `rootGetters`</span><br><span class="line">      someGetter (state, getters, rootState, rootGetters) &#123;</span><br><span class="line">        getters.someOtherGetter // -&gt; &apos;foo/someOtherGetter&apos;</span><br><span class="line">        rootGetters.someOtherGetter // -&gt; &apos;someOtherGetter&apos;</span><br><span class="line">      &#125;,</span><br><span class="line">      someOtherGetter: state =&gt; &#123; ... &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    actions: &#123;</span><br><span class="line">      // 在这个模块中， dispatch 和 commit 也被局部化了</span><br><span class="line">      // 他们可以接受 `root` 属性以访问根 dispatch 或 commit</span><br><span class="line">      someAction (&#123; dispatch, commit, getters, rootGetters &#125;) &#123;</span><br><span class="line">        getters.someGetter // -&gt; &apos;foo/someGetter&apos;</span><br><span class="line">        rootGetters.someGetter // -&gt; &apos;someGetter&apos;</span><br><span class="line"></span><br><span class="line">        dispatch(&apos;someOtherAction&apos;) // -&gt; &apos;foo/someOtherAction&apos;</span><br><span class="line">        dispatch(&apos;someOtherAction&apos;, null, &#123; root: true &#125;) // -&gt; &apos;someOtherAction&apos;</span><br><span class="line"></span><br><span class="line">        commit(&apos;someMutation&apos;) // -&gt; &apos;foo/someMutation&apos;</span><br><span class="line">        commit(&apos;someMutation&apos;, null, &#123; root: true &#125;) // -&gt; &apos;someMutation&apos;</span><br><span class="line">      &#125;,</span><br><span class="line">      someOtherAction (ctx, payload) &#123; ... &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="在带命名空间的模块注册全局-action"><a href="#在带命名空间的模块注册全局-action" class="headerlink" title="在带命名空间的模块注册全局 action"></a>在带命名空间的模块注册全局 action</h2><p>若需要在带命名空间的模块注册全局 action，你可添加 root: true，并将这个 action 的定义放在函数 handler 中。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  actions: &#123;</span><br><span class="line">    someOtherAction (&#123;dispatch&#125;) &#123;</span><br><span class="line">      dispatch(&apos;someAction&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  modules: &#123;</span><br><span class="line">    foo: &#123;</span><br><span class="line">      namespaced: true,</span><br><span class="line"></span><br><span class="line">      actions: &#123;</span><br><span class="line">        someAction: &#123;</span><br><span class="line">          root: true,</span><br><span class="line">          handler (namespacedContext, payload) &#123; ... &#125; // -&gt; &apos;someAction&apos;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="带命名空间的绑定函数"><a href="#带命名空间的绑定函数" class="headerlink" title="带命名空间的绑定函数"></a>带命名空间的绑定函数</h2><p><a href="https://vuex.vuejs.org/zh/guide/modules.html#%E5%B8%A6%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E7%BB%91%E5%AE%9A%E5%87%BD%E6%95%B0" target="_blank" rel="noopener">简写形式</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2019-12-04-vuex%E7%9A%84%E7%AE%80%E5%8D%95%E7%90%86%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
@@ -1438,7 +1281,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1446,7 +1289,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1454,23 +1301,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">nodejs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">资源</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">项目案例</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">微信小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1478,7 +1317,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">微信小程序</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">项目案例</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>

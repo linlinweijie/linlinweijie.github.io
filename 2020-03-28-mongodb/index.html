@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: nodejs | 林伟杰的博客</title>
+  <title>&#39;mongodb&#39; | 林伟杰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="林伟杰的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;nodejs&#x2F;index.html">
+  <meta name="description" content="安装步骤 安装完mongodb设置bin目录为环境变量 建立数据库文件夹，使用 mongod --dbpath (数据库文件路劲)  打开数据库，数据库开机 使用mongo进入REPL环境 再REPL环境使用use dbname(dbname是数据库名称)创建数据库  mongodb常用的命令常用命令 mongodb REPL环境 操作命令 show dbs  （显示所有数据库列表）  show">
+<meta name="keywords" content="随笔,mongodb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;mongodb&#39;">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020-03-28-mongodb&#x2F;index.html">
 <meta property="og:site_name" content="林伟杰的博客">
+<meta property="og:description" content="安装步骤 安装完mongodb设置bin目录为环境变量 建立数据库文件夹，使用 mongod --dbpath (数据库文件路劲)  打开数据库，数据库开机 使用mongo进入REPL环境 再REPL环境使用use dbname(dbname是数据库名称)创建数据库  mongodb常用的命令常用命令 mongodb REPL环境 操作命令 show dbs  （显示所有数据库列表）  show">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-02T10:06:26.659Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="林伟杰的博客" type="application/atom+xml">
@@ -136,36 +140,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mongodb" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2019-12-31-nodejs%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2019-12-31T02:38:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2019-12-31-nodejs%E5%9F%BA%E7%A1%80/">nodejs基础</a>
+    <h1 class="article-title" itemprop="name">
+      &#39;mongodb&#39;
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/blog/2020-03-28-mongodb/" class="archive-article-date">
+  	<time datetime="2020-03-28T15:10:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><ol>
+<li>安装完mongodb设置bin目录为环境变量</li>
+<li>建立数据库文件夹，使用 <code>mongod --dbpath (数据库文件路劲)</code>  打开数据库，数据库开机</li>
+<li>使用<code>mongo</code>进入REPL环境</li>
+<li>再REPL环境使用<code>use dbname</code>(dbname是数据库名称)创建数据库</li>
+</ol>
+<h2 id="mongodb常用的命令"><a href="#mongodb常用的命令" class="headerlink" title="mongodb常用的命令"></a>mongodb常用的命令</h2><p><a href="https://www.jb51.net/article/179844.htm" target="_blank" rel="noopener">常用命令</a></p>
+<h3 id="mongodb-REPL环境-操作命令"><a href="#mongodb-REPL环境-操作命令" class="headerlink" title="mongodb REPL环境 操作命令"></a>mongodb REPL环境 操作命令</h3><ul>
+<li>show dbs  （显示所有数据库列表） </li>
+<li>show collections (显示当前数据库的所有集合列表)</li>
+<li>use xuesheng (使用xuesheng数据库)</li>
+<li>插入数据 db.(表名).insert(data)  (data: json数据)</li>
+<li>查数据   db.(表名).find(data)  (data: json数据,data为{}表示查询该表所有数据)</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -175,25 +191,134 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">nodejs</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">mongodb</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020-03-28-mongodb/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/blog/2020-04-01-axios/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          axios
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/blog/2020-03-27-linux%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux基础笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">1.</span> <span class="toc-text">安装步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mongodb常用的命令"><span class="toc-number">2.</span> <span class="toc-text">mongodb常用的命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#mongodb-REPL环境-操作命令"><span class="toc-number">2.1.</span> <span class="toc-text">mongodb REPL环境 操作命令</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -216,9 +341,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
